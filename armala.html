@@ -580,6 +580,22 @@
                 contexto.clearRect(0, 0, CANVAS.width, CANVAS.height);
                 dibujarPorciones(8, muzzarellaPatron, 8, false);
             }
+
+            function obtenerUbicacionEnCanvas(IDSelect, cantidadGustos) {
+                const ubicacion = IDSelect - 1;
+                const ubicaciones1Gusto = [8];
+                const ubicaciones2Gustos = [8,4];
+                const ubicaciones4Gustos = [8, 6, 4, 2];
+                
+                switch (cantidadGustos) {
+                    case 1:
+                        return ubicaciones1Gusto[ubicacion];
+                    case 2:
+                        return ubicaciones2Gustos[ubicacion];
+                    case 4:
+                        return ubicaciones4Gustos[ubicacion];
+                }
+            }
             
             return {
                 "muzzarellaPatron" : muzzarellaPatron,
@@ -587,7 +603,8 @@
                 "jamonPatron" : jamonPatron,
                 "napolitanaPatron" : napolitanaPatron,
                 "dibujarPorciones": dibujarPorciones,
-                "limpiarCanvas" : limpiarCanvas
+                "limpiarCanvas" : limpiarCanvas,
+                "obtenerUbicacionEnCanvas" : obtenerUbicacionEnCanvas
             }
         })();
         

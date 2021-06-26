@@ -68,13 +68,6 @@ function init() {
     videoPublicitario.addEventListener('timeupdate', escucharVideo); 
     */
 
-    const gustoPatron = {
-        'muzzarella': canvasPizza.muzzarellaPatron, 
-        'jamon': canvasPizza.jamonPatron,
-        'napolitana': canvasPizza.napolitanaPatron,
-        'calabresa': canvasPizza.calabresaPatron
-    }
-
     const listaDePrecios = {
         precioPorcion: {
             'muzzarella': 30, 
@@ -108,6 +101,7 @@ function init() {
     
     function mostrarPorciones(event) {
         const nombreGusto = event.target.value;
+        const nombreGustoPatron = nombreGusto + "Patron";
         const mostrar = nombreGusto != "Default" ? true : false;
 
         const IDSelect = parseInt(event.target.getAttribute('data-ipizza-gusto-num'));
@@ -116,25 +110,9 @@ function init() {
         const cantidadGustos = parseInt($tarjetaSeleccionada.getAttribute('data-ipizza-cant-gustos'));
         const cantidadPorciones = calcularCantidadPorciones(cantidadGustos);
 
-        const ubicacionEnCanvas = obtenerUbicacionEnCanvas(cantidadGustos, IDSelect);
+        const ubicacionEnCanvas = canvasPizza.obtenerUbicacionEnCanvas(IDSelect, cantidadGustos);
 
-        canvasPizza.dibujarPorciones(cantidadPorciones, gustoPatron[nombreGusto], ubicacionEnCanvas, mostrar);
-    }
-
-    function obtenerUbicacionEnCanvas(cantidadGustos, IDSelect) {
-        const ubicacion = IDSelect - 1;
-        const ubicaciones1Gusto = [8];
-        const ubicaciones2Gustos = [8,4];
-        const ubicaciones4Gustos = [8, 4, 6, 2];
-        
-        switch (cantidadGustos) {
-            case 1:
-                return ubicaciones1Gusto[ubicacion];
-            case 2:
-                return ubicaciones2Gustos[ubicacion];
-            case 4:
-                return ubicaciones4Gustos[ubicacion];
-        }
+        canvasPizza.dibujarPorciones(cantidadPorciones, canvasPizza[nombreGustoPatron], ubicacionEnCanvas, mostrar);
     }
     
     function calcularCostos(event) {
