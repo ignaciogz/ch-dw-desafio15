@@ -1,0 +1,44 @@
+%sombra-contenedor {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.55), 0 6px 20px 0 rgba(0, 0, 0, 0.54);
+}
+
+%sombra-contenedor-hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.55), 0 6px 20px 0 rgba(0, 0, 0, 0.54);
+}
+
+%menu {
+    a {
+        border-bottom: 0.5vh solid transparent;
+        color: var(--color-blanco);
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding: 0.5vh 0;
+        position: relative;
+        text-transform: capitalize;
+
+        &:visited,
+        &:active {
+            color: var(--color-blanco);
+        }
+
+        // INICIO Borde desde el centro hasta los costados
+        &::before {
+            content: "";
+            background: var(--color-queso);
+            display: block;
+            height: 3px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transition: 0.5s;
+            width: 0;
+        }
+
+        &:hover::before {
+            left: 0;
+            width: 100%;
+        }
+        // FIN Borde desde el centro hasta los costados
+    }
+}
+

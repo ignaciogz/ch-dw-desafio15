@@ -1,0 +1,27 @@
+// -------- GENERAL --------
+$altura-completa: 100vh !default;
+$altura-menu-fijo: 75px !default;
+$borde-general: 12px !default;
+$padding-horizontal: 3rem !default;
+$padding-vertical: 2.5rem !default;
+        
+
+// -------- RESPONSIVE --------
+$altura-menu-fijo-mobile: 67px !default;
+$padding-vertical-mobile: 1.5rem !default;
+
+
+// Las media query se generan dinamicamente !
+// En base al siguiente mapa:
+$mq-breakpoints: (
+    // -------- ADVERTENCIA ! --------
+    // Si se agrega un nuevo breakpoint al inicio, 
+    // PREVIAMENTE poner este nuevo como argumento a las llamadas de mediaq-breakpoint() que no tengan argumento.
+
+    // La SOLUCION a esta advertencia sera implementada en la proxima version del codigo :D
+    "sm": 576px,
+    "md": 768px,
+    "lg": 992px
+) !default;
+
+$mq-breakpoints-hack: 0.02px !default;  // Hack para evitar error logico en las condiciones de las media queries

@@ -1,0 +1,55 @@
+@import '../base/extends';
+@import '../base/gradientes';
+@import '../base/media-query';
+
+/* -------- contacto.html -------- */
+.contacto {
+    background: map-get($gradientes, g-ipizza);
+}
+
+.contacto iframe {
+    @extend %sombra-contenedor;
+    border: 0;
+    transition: 1s;
+    width: 90%;
+
+    &:hover {
+        @extend %sombra-contenedor-hover;
+        transition: 1s;
+    }
+}
+
+.contacto form {
+    @extend %sombra-contenedor;
+    background-color: var(--color-gris);
+    border-radius: 25px;
+    padding: 1rem;
+    transition: 1s;
+    width: 90%;
+
+    h1 {
+        display: inline-block;
+        color: inherit;
+        font-size: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        margin-bottom: inherit;
+    }
+
+    .campo-obligatorio::after {
+        content: '*';
+        color: var(--color-queso);
+        margin-left: 0.3rem;
+    }
+
+    &:hover {
+        @extend %sombra-contenedor-hover;
+        transition: 1s;
+    }
+}
+
+@include mediaq-breakpoint-max(md) {
+    .contacto form {
+        width: 100%;
+    }
+}

@@ -1,0 +1,22 @@
+@import '../base/gradientes';
+@import '../base/media-query';
+
+.error {
+    background: map-get($gradientes, UIg-RedMist);
+    height: var(--altura-completa);
+    padding: 0;
+
+    .codigo-error {
+        font-size: 2rem;
+        filter: drop-shadow(0 0 10px var(--color-negro-intenso));
+    } 
+
+    h1 {
+        color: var(--color-negro-intenso);
+    }
+
+    i {
+        font-size: 8rem;
+        filter: drop-shadow(0 0 10px var(--color-negro-intenso));
+    }
+}

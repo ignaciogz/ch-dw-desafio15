@@ -1,0 +1,121 @@
+@import '../base/media-query';
+
+/* -------- Footer -------- */
+footer {
+    background-color: var(--color-gris);
+    border-top: 2.5px solid var(--color-blanco);
+    padding: var(--padding-vertical) var(--padding-horizontal);
+    user-select: none;
+    i {
+        color: var(--color-blanco);
+    }
+}
+
+footer .nuestras-apps {
+    img {
+        filter: opacity(0.6);
+        height: 60px;
+        width: 200px;
+
+        &:hover {
+            filter: drop-shadow(0 0 10px #F8F9F166);
+        }
+    }
+}
+
+footer .iconos-formas-de-pago {
+    img {
+        height: 52px;
+        margin-right: 0.2rem;
+        width: 60px;
+    }
+}
+    
+footer address {
+    font-style: italic;
+    margin: 0;
+    .iconos-address {
+        width: 50px;
+        height: 42px;
+    }
+    p {
+        color: var(--color-blanco);
+        font-size: 0.8rem;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: initial;
+        margin: 0;
+    }
+}
+
+footer .otros-links {
+    a:hover {
+        color: var(--color-blanco);
+    }
+    &:active,
+    &:visited {
+        color: var(--color-tomate);
+    }
+}
+
+footer small {
+    font-size: 0.6rem;
+    margin-top: 1.5rem;
+}
+
+footer .redes-sociales {
+    margin-top: 0.5rem;
+    a {
+        margin-right: 0.5rem;
+    }
+
+    i.fa-facebook-square:hover {
+        color: var(--color-facebook);
+    }
+    
+    i.fa-instagram:hover {
+        color: var(--color-instagram);
+    }
+    
+    i.fa-youtube:hover {
+        color: var(--color-youtube);
+    }
+}
+
+/* Estilos de FLEX */
+footer div.row {
+    row-gap: 1.5rem;
+}
+
+footer .nuestras-apps.d-flex {
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
+
+footer address a.d-flex {
+    column-gap: 0.5rem;
+}
+
+footer address.d-flex,
+footer .otros-links.d-flex {
+    row-gap: 0.5rem;
+}
+
+@include mediaq-breakpoint-max(md) {
+    footer {
+        padding: var(--padding-vertical) 0;
+        padding-bottom: calc( var(--padding-vertical) / 2 );
+    }
+}
+
+@include mediaq-breakpoint {
+    footer .redes-sociales {
+        a {
+            margin-left: 0.5rem;
+            margin-right: 0;
+        }
+    }
+
+    footer small {
+        font-size: 0.4rem;
+    }
+}

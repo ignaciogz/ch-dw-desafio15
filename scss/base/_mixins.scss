@@ -1,0 +1,19 @@
+@mixin background-full($url, $posicion: center, $tamano: cover) {
+    content:'';
+    background-image: $url;
+    background-size: $tamano;
+    background-position: $posicion;
+    position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+}
+
+@mixin prefix($propiedad, $valor) {
+    -webkit-#{$propiedad}: $valor;
+    -moz-#{$propiedad}: $valor;
+    -ms-#{$propiedad}: $valor;
+    -o-#{$propiedad}: $valor;
+    #{$propiedad}: $valor;
+}

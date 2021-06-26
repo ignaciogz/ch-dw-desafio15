@@ -1,0 +1,11 @@
+@import '../base/extends';
+
+nav#menu {
+    @extend %menu;
+}
+
+@include mediaq-breakpoint-max(md) {
+    nav#menu {
+        display: none;
+    }
+}

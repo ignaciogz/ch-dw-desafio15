@@ -1,0 +1,23 @@
+@import '../base/media-query';
+
+/* -------- CSS Tricks -------- */
+.wrap-animation {
+    overflow: hidden;
+}
+
+.h-visible {
+    height: var(--altura-visible);
+}
+
+:target::before { /* Solucion a exceso de desplazamiento de links internos por menu fijo */
+    content: "";
+    display: block;
+    height: var(--altura-menu-fijo); /* aquí la altura de la cabecera fija*/
+    margin-top: calc(0px - var(--altura-menu-fijo)); /* altura negativa de la cabecera fija */
+}
+
+@include mediaq-breakpoint-max(md) {
+    .h-visible {
+        height: auto;
+    }
+}

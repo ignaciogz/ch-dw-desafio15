@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+    <!-- Protocolo Open Graph -->
+    <meta property="og:site_name" content="iPizza">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ibb.co/bNWCBM1">
+    <meta property="og:author" content="Ignacio Gutierrez">
+    <meta property="og:title" content="Arma o crea tu pizza favorita | iPizza. Es simple, la armas la comes">
+    <meta property="og:description" content="Armala y pide tu pizza iPizza favorita a domicilio o a recoger en tu tienda más cercana, fácil y rápido. Disfruta de una experiencia única con nuestras pizzas a la piedra de auténtica masa e ingredientes frescos. ¡Deliciosas!">
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Arma o crea tu pizza favorita | iPizza">
+    <meta property="twitter:image" content="https://ibb.co/bNWCBM1">
+    <meta property="twitter:image:alt" content="Logo de iPizza, una porción de pizza calabresa con queso chorreando">
+    <meta property="twitter:description" content="Armala y pide tu pizza iPizza favorita a domicilio o a recoger en tu tienda más cercana, fácil y rápido. Disfruta de una experiencia única con nuestras pizzas a la piedra de auténtica masa e ingredientes frescos. ¡Deliciosas!">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#212121">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    
+    <!-- CSS Animaciones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- Fuentes externas -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Satisfy&display=swap" rel="stylesheet">
+
+    <!-- Iconos - Font Awesome -->
+    <script src="https://kit.fontawesome.com/2a51f1f1ea.js" crossorigin="anonymous"></script>
+
+    <!-- Estilos para ERRORES -->
+    <style>
+        :root {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 21px;
+            
+                /* General */
+                --altura-completa: 100vh;
+                --font-family-ipizza: 'Finger Paint', cursive; 
+
+                /* Colores del sitio */
+                --color-blanco: #F8F9F1;
+                --color-gris: #212121;
+                --color-negro-intenso: #0a0a0a;
+                --color-queso: #FCC61A;;
+        }
+
+        body {
+            color: var(--color-blanco);
+        }
+
+        h1 {
+            color: var(--color-negro-intenso);
+            font-size: 2.2rem;
+            font-family: var(--font-family-ipizza);
+            margin-bottom: 0.67rem;
+        }
+
+        .error {
+            background: linear-gradient(to top, #000000, #e74c3c);
+            height: var(--altura-completa);
+            padding: 0;
+        }
+
+        .codigo-error {
+            font-size: 2rem;
+            filter: drop-shadow(0 0 10px var(--color-negro-intenso));
+        }
+
+        i {
+            color: var(--color-blanco);
+            font-size: 8rem;
+            filter: drop-shadow(0 0 10px var(--color-negro-intenso));
+        }
+
+        /* -------- BOTONES -------- */
+        button {
+            border-radius: 25px;
+            border-color: transparent;
+            color: var(--color-gris);
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 0.2rem 0.8rem;
+            text-transform: uppercase;
+            user-select: none;
+        }
+
+        .btn-volver-inicio {
+            width: 300px;
+        }
+
+        /* -------- Animaciones --------*/
+        .bounce {
+            -webkit-animation: bounce 1.5s ease-in-out;
+            -moz-animation: bounce 1.5s ease-in-out;
+            -ms-animation: bounce 1.5s ease-in-out;
+            -o-animation: bounce 1.5s ease-in-out;
+            animation: bounce 1.5s ease-in-out;
+        }
+
+        ::selection { 
+            background: var(--color-queso);
+            color: var(--color-gris);
+        }
+
+        /* -------- FLEX paginas de error --------*/
+        .error div.d-flex {
+            row-gap: 0.5rem;
+        }
+    </style>
+
+    <title>ERROR 404: Página NO encontrada | iPizza - La armas, la comes</title>
+</head>
+<body>
+    <!-- Error -->
+    <section class="error">
+        <div class="d-flex flex-column justify-content-center h-100">
+            <i class="fas fa-exclamation-triangle d-block text-center bounce"></i>
+            <div class="codigo-error text-center bounce">ERROR 404</div>
+            <h1 class="text-center bounce">Página NO encontrada</h1>
+            <button class="btn-volver-inicio mx-auto" onclick="location.href = 'index.html';">Ir al inicio</button>
+        </div>
+    </section>
+
+    <script async src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+</body>
+</html>

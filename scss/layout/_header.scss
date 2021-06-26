@@ -1,0 +1,25 @@
+@import '../base/media-query';
+
+/* -------- HEADER -------- */
+.header {
+    background-color: var(--color-gris);
+    box-shadow: 0 10px 6px -6px #F8F9F166;
+    height: var(--altura-menu-fijo);
+    padding: 0 2.5rem;
+    user-select: none;
+
+    div.row {
+        height: var(--altura-menu-fijo);
+    }
+}
+
+@include mediaq-breakpoint-max(md) {
+    .header {
+        height: var(--altura-menu-fijo-mobile);
+        padding: 0 0.7rem;
+
+        div.row {
+            height: var(--altura-menu-fijo-mobile);
+        }
+    }
+}

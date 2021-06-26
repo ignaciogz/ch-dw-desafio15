@@ -1,0 +1,146 @@
+/* -------- FORMULARIOS -------- */
+form {
+    user-select: none;
+
+    input,
+    select,
+    textarea,
+    option {
+        background-color: var(--color-gris);
+        border: none;
+        border-bottom: 2px solid var(--color-queso);
+        border-radius: 4px;
+        color: var(--color-blanco);
+        font-size: 0.9rem;
+        padding: 8px 0 5px;
+        resize: none;
+        width: 100%;
+    }
+
+    select {
+        cursor: pointer;
+    
+        &:hover {
+            background-color: var(--color-queso);
+        }
+    }
+
+    textarea {
+        border: 2px solid var(--color-queso);
+    }
+    
+    input[type=checkbox] {
+        width: initial;
+    }
+    
+    input[type=month] {
+        resize: none;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+        outline: none;
+    }
+}
+
+/* Quitando botones de los input tipo number */
+form input[type=number] {
+    -moz-appearance:textfield;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+/* FIN Quitando botones de los input tipo number */
+
+input[type=submit] {
+    background-color: var(--color-gris);
+    border-radius: 25px;
+    border-color: var(--color-queso);
+    border-width: 2px;
+    color: var(--color-blanco);
+    font-family: 'Finger Paint', cursive;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.5vh 1vw;
+    text-transform: uppercase;
+    user-select: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--color-queso);
+        border-bottom-color: var(--color-gris);
+        color: var(--color-gris);
+        transition: 1s;
+    }
+}
+
+/* INICIO Checkbox Personalizado */
+.check-personalizado {
+    input {
+        display:none;
+
+        & + label {
+            cursor: pointer;
+        }
+    }
+
+    label {
+        &::before {
+            content: "";
+            background: transparent;
+            border: 2px solid var(--color-queso);
+            border-radius: 4px;
+            height: 1rem;
+            display: inline-block;
+            margin-right: 10px;
+            text-align: center;
+            vertical-align: middle;
+            width: 1rem;
+        }
+    }
+
+    input[type=checkbox]:checked + label::before {
+        content: '✓';
+        color: var(--color-blanco);
+        font-family: "Times New Roman";
+        font-size: 0.7rem;
+        text-shadow: 4px -2px 3px var(--color-queso);
+    }
+}
+/* FIN Checkbox Personalizado */
+    
+/* INICIO Radio Personalizado */
+.radio-personalizado {
+    input {
+        display:none;
+
+        & + label {
+            cursor: pointer;
+        }
+    }
+
+    label {
+        &::before {
+            content: "";
+            background: transparent;
+            border: 2px solid var(--color-queso);
+            border-radius: 50%;
+            height: 1.1rem;
+            display: inline-block;
+            margin-right: 10px;
+            text-align: center;
+            vertical-align: middle;
+            width: 1.1rem;
+        }
+    }
+    
+    input[type=radio]:checked + label::before {
+        content: '';
+        background-color: var(--color-queso);
+    }
+}
+/* FIN Radio Personalizado */

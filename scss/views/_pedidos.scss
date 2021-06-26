@@ -1,0 +1,84 @@
+@import '../base/extends';
+@import '../base/mixins';
+
+/* -------- pedidos.html -------- */
+.consulta-pedido {
+    i {
+        color: var(--color-gris);
+        font-size: 1rem;
+    }
+
+    &::before {
+        @include background-full(url(../img/bg-pedidos.jpg), top);
+        filter: brightness(0.7);
+    }
+}
+
+.consulta-pedido .contenedor {
+    @extend %sombra-contenedor;
+    background-color: #F8F9F180;
+    border-radius: var(--borde-general);
+    color: var(--color-gris);
+    padding: var(--padding-vertical) 1.5rem;
+    position: relative;
+
+    form {
+        width: 100%;
+    }
+    h2 {
+        font-size: 1rem;
+        i {
+            color: var(--color-tomate);
+            text-align: center;
+        }
+    }
+}
+
+.faq {
+    background-color: var(--color-negro-intenso);
+    
+    h1 {
+        color: var(--color-blanco);
+        text-align: center;
+        margin-bottom: 0.67rem;
+    }
+    i {
+        color: var(--color-queso);
+        font-size: 1rem;
+    }
+    .desplegable details {
+        p {
+            background-color: var(--color-negro-intenso);
+            border-left: 0.3rem solid var(--color-queso);
+            font-size: 0.8rem;
+            margin: 0;
+            padding: 1.2rem;
+            padding-right: 0;
+        }
+        summary {
+            background-color: var(--color-negro-intenso);
+            border-left: 0.3rem solid var(--color-queso);
+            color: var(--color-queso);
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: bold;
+            outline: none;
+            padding: 1.2rem;
+            padding-right: 0;
+            text-align: left;
+    
+            &:hover {
+                background-color: var(--color-queso);
+                color: var(--color-negro-intenso);
+            }
+        }
+        ul {
+            background-color: var(--color-negro-intenso);
+            border-left: 0.3rem solid var(--color-queso);
+            font-size: 0.8rem;
+            margin: 0;
+            padding: 0 0 1.2rem 2.2rem;
+        }
+    }
+}
+

@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+    <!-- SEO -->
+    <meta name="Description" content="Armá tu pizza iPizza favorita, fácil y rápido. Es simple, selecioná la pizza que queres y sus gustos, del resto nos encargamos nosotros.">
+    <meta name="Keywords" content="armá pizza, creá pizza, pizza armala iPizza, pizza creala iPizza, pizza online iPizza, pizza menu iPizza, pizza app iPizza, pizzas iPizza, pizzas armala iPizza, pizzas creala iPizza, pizzas online iPizza, pizzas menu iPizza, pizzas app iPizza, pizza a la piedra, pizzas a la piedra, pizza con ingredientes frescos, pizzas con ingredientes frescos, pizza deliciosa, pizzas deliciosas, mejores pizzas">
+    <meta name="language" content="Spanish">
+    <meta name="copyright" content="iPizza">
+    <meta name="author" content="Ignacio Gutierrez">
+
+    <!-- Protocolo Open Graph -->
+    <meta property="og:site_name" content="iPizza">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ibb.co/bNWCBM1">
+    <meta property="og:author" content="Ignacio Gutierrez">
+    <meta property="og:title" content="Arma o crea tu pizza favorita | iPizza. Es simple, la armas la comes">
+    <meta property="og:description" content="Armala y pide tu pizza iPizza favorita a domicilio o a recoger en tu tienda más cercana, fácil y rápido. Disfruta de una experiencia única con nuestras pizzas a la piedra de auténtica masa e ingredientes frescos. ¡Deliciosas!">
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Arma o crea tu pizza favorita | iPizza">
+    <meta property="twitter:image" content="https://ibb.co/bNWCBM1">
+    <meta property="twitter:image:alt" content="Logo de iPizza, una porción de pizza calabresa con queso chorreando">
+    <meta property="twitter:description" content="Armala y pide tu pizza iPizza favorita a domicilio o a recoger en tu tienda más cercana, fácil y rápido. Disfruta de una experiencia única con nuestras pizzas a la piedra de auténtica masa e ingredientes frescos. ¡Deliciosas!">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#212121">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- CSS Animaciones -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- Fuentes externas -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Satisfy&display=swap" rel="stylesheet">
+
+    
+
+    <!-- Iconos - Font Awesome -->
+    <script async src="https://kit.fontawesome.com/2a51f1f1ea.js" crossorigin="anonymous"></script>
+
+    <title>Armala | iPizza - La armas, la comes</title>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header container-fluid fixed-top">
+        <div class="row align-items-center h-100">
+            <div class="col-2 col-sm-2 d-lg-none position-fixed">
+                <button class="btn-menu-mobile" type="button" data-bs-toggle="offcanvas" data-bs-target="#contenedor-menu-mobile" aria-controls="contenedor-menu-mobile">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="col-4 col-sm-4 offset-4 offset-sm-4 col-lg-3 offset-lg-0 col-xl-2 h-100">
+                <a href="index.html" title="logotipo de iPizza" class="logotipo h-100 d-flex align-items-center justify-content-center justify-content-lg-start">iPizza
+                    <div class="logo-container">
+                        <div class="logo-masa">
+                            <div class="logo-fetas"></div>
+                        </div>
+                        <div class="logo-queso chorreando"></div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg">
+                <nav id="menu" class="d-inline-block">
+                    <ul class="d-none d-lg-block m-0 px-1">
+                        <li class="d-inline-block mx-1"><a href="index.html" title="Acceso directo a nuestra página inicial">inicio</a></li>
+                        <li class="d-inline-block mx-1"><a href="pedidos.html" title="Acceso directo a nuestra página de pedidos">pedidos</a></li>
+                        <li class="d-inline-block mx-1"><a href="nosotros.html" title="Acceso directo a nuestra página sobre nosotros">nosotros</a></li>
+                        <li class="d-inline-block mx-1"><a href="contacto.html" title="Acceso directo a nuestra página de contacto">contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="col-lg-2 d-flex justify-content-end">
+                <button id="btn-armala-header" class="btn-armala shake" onclick="location.href = 'armala.html';">armala</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu mobile -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="contenedor-menu-mobile" aria-labelledby="label-menu-mobile">
+        <section class="menu-mobile">
+            <div class="offcanvas-header justify-content-center">
+                <h2 class="offcanvas-title" id="label-menu-mobile">Menú</h2>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column justify-content-between">
+                <nav id="menu-mobile">
+                    <ul class="m-0 px-1">
+                        <li class="d-block text-center m-3"><a href="index.html" title="Acceso directo a nuestra página inicial">inicio</a></li>
+                        <li class="d-block text-center m-3"><a href="pedidos.html" title="Acceso directo a nuestra página de pedidos">pedidos</a></li>
+                        <li class="d-block text-center m-3"><a href="nosotros.html" title="Acceso directo a nuestra página sobre nosotros">nosotros</a></li>
+                        <li class="d-block text-center m-3"><a href="contacto.html" title="Acceso directo a nuestra página de contacto">contacto</a></li>
+                    </ul>
+                </nav>
+                <small class="d-block text-center">
+                    intelligentPizza <span>&copy;</span> 2021 <span>|</span> Desarrollado por <h5>Ignacio Gutierrez</h5>
+                </small>
+            </div>
+        </section>
+    </div>
+
+    <!-- Armala -->
+    <section class="armala container-fluid ">
+        <div class="row m-0">
+            <!-- INICIO Armado del pedido -->
+            <div class="col-12 col-sm-12 col-lg-8">
+                <section class="armado-de-pedido">
+                    <h1>iPizza seleccionada</h1>
+
+                    <!-- INICIO carousel tarjetas de productos -->
+                    <div id="armala-carousel-productos" class="carousel slide" data-bs-interval="false" data-bs-ride="false">
+                        <div class="carousel-inner h-100 d-flex align-items-center">
+                            <div class="carousel-item">
+                                <div class="tarjeta-de-producto tarjeta-i1 mx-auto" data-ipizza-cant-gustos=1>
+                                    <figure>
+                                        <img src="img/modelos/i1-iPizza.jpg" title="i1 la pizza clásica, de un solo gusto" alt="i1 la pizza clásica, de un solo gusto">
+                                        <div class="datos-tarjeta-de-producto d-flex align-items-center">
+                                            <h2>i1</h2>
+                                            <figcaption>i1 la pizza clásica, de un solo gusto</figcaption>
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="carousel-item active">
+                                <div class="tarjeta-de-producto tarjeta-i4 mx-auto" data-ipizza-cant-gustos=4>
+                                    <figure style="position: relative">
+                                        <img src="img/modelos/i4-iPizza.jpg" title="i4 tu pizza armala con hasta 4 gustos" alt="i4 tu pizza armala con hasta 4 gustos">
+                                        <div class="datos-tarjeta-de-producto d-flex align-items-center">
+                                            <h2>i4</h2>
+                                            <figcaption>i4 tu pizza armala con hasta 4 gustos</figcaption>
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="tarjeta-de-producto tarjeta-i2 mx-auto" data-ipizza-cant-gustos=2>
+                                    <figure>
+                                        <img src="img/modelos/i2-iPizza.jpg" title="i2 tu pizza armala con hasta 2 gustos" alt="i2 tu pizza armala con hasta 2 gustos">
+                                        <div class="datos-tarjeta-de-producto d-flex align-items-center">
+                                            <h2>i2</h2>
+                                            <figcaption>i2 tu pizza armala con hasta 2 gustos</figcaption>
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <button class="carousel-control-prev btn-carousel btn-carousel-anterior" data-aos="zoom-in-right" data-aos-easing="ease-in-sine" data-aos-duration="500" type="button" data-bs-target="#armala-carousel-productos"
+                            data-bs-slide="prev">
+                            <i class="fas fa-angle-left carousel-control-prev-icon" aria-hidden="true"></i>
+                            <span class="visually-hidden">Opinion previa</span>
+                        </button>
+                        <button class="carousel-control-next btn-carousel btn-carousel-siguiente" data-aos="zoom-in-left" data-aos-easing="ease-in-sine" data-aos-duration="500" type="button" data-bs-target="#armala-carousel-productos"
+                            data-bs-slide="next">
+                            <i class="fas fa-angle-right carousel-control-next-icon" aria-hidden="true"></i>
+                            <span class="visually-hidden">Opinion posterior</span>
+                        </button>
+                    </div>
+                    <!-- FIN carousel tarjetas de productos -->
+
+                    <form id="armala-form" class="d-flex flex-column" action="#" method="post" name="armala" autocomplete="off">
+                        <!-- Armado de la iPizza -->
+                        <fieldset class="gustos d-flex flex-column">
+                            <h2>Gustos de las porciones</h2>
+                            <select name="gusto1" data-ipizza-gusto-num=1 required>
+                                <option value="Default" selected>- Seleccionar gusto -</option>
+                                <option value="muzzarella">Muzzarella</option>
+                                <option value="jamon">Con jamón</option>
+                                <option value="napolitana">Napolitana</option>
+                                <option value="calabresa">Calabresa</option>
+                            </select>
+
+                            <select name="gusto2" data-ipizza-gusto-num=2 required>
+                                <option value="Default" selected>- Seleccionar gusto -</option>
+                                <option value="muzzarella">Muzzarella</option>
+                                <option value="jamon">Con jamón</option>
+                                <option value="napolitana">Napolitana</option>
+                                <option value="calabresa">Calabresa</option>
+                            </select>
+
+                            <select name="gusto3" data-ipizza-gusto-num=3 required>
+                                <option value="Default" selected>- Seleccionar gusto -</option>
+                                <option value="muzzarella">Muzzarella</option>
+                                <option value="jamon">Con jamón</option>
+                                <option value="napolitana">Napolitana</option>
+                                <option value="calabresa">Calabresa</option>
+                            </select>
+
+                            <select name="gusto4" data-ipizza-gusto-num=4 required>
+                                <option value="Default">- Seleccionar gusto -</option>
+                                <option value="muzzarella">Muzzarella</option>
+                                <option value="jamon">Con jamón</option>
+                                <option value="napolitana">Napolitana</option>
+                                <option value="calabresa" >Calabresa</option>
+                            </select>
+                        </fieldset>
+                        <!-- FIN Armado de la iPizza -->
+
+                        <!-- Extras -->
+                        <fieldset class="extras d-flex flex-column">
+                            <!-- Los checkbox serán switch de dispositivos móviles usando CSS -->
+                            <h2>Mejorá tu iPizza</h2>
+
+                            <div class="btn-switch d-flex justify-content-between">
+                                <label for="oregano">¿Le agregamos orégano?</label>
+                                <div class="flex">
+                                    <input type="checkbox" id="oregano" class="switch-input">
+                                    <label for="oregano" class="switch-label"></label>
+                                </div>
+                            </div>
+
+                            <div class="btn-switch d-flex justify-content-between">
+                                <label for="aceitunas">¿Le ponemos aceitunas?</label>
+                                <div class="flex">
+                                    <input type="checkbox" id="aceitunas" class="switch-input" name="aceitunas">
+                                    <label for="aceitunas" class="switch-label"></label>
+                                </div>
+                            </div>
+
+                            <div class="btn-switch d-flex justify-content-between">
+                                <label for="doble-queso">¿Tu iPizza tendrá doble queso?</label>
+                                <div class="flex">
+                                    <input type="checkbox" id="doble-queso" class="switch-input" name="doble-queso">
+                                    <label for="doble-queso" class="switch-label"></label>
+                                </div>
+                            </div>
+
+                            <div class="btn-switch d-flex justify-content-between">
+                                <label for="cheddar">¿Con borde de queso cheddar?</label>
+                                <div class="flex">
+                                    <input type="checkbox" id="cheddar" class="switch-input" name="cheddar">
+                                    <label for="cheddar" class="switch-label"></label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="d-flex align-items-center check-personalizado">
+                            <input type="checkbox" id="papas" name="papas">
+                            <label for="papas">Incluir un cono de papas fritas</label>
+                        </div>
+                        <!-- FIN Extras -->
+
+                        <!-- Cliente -->
+                        <fieldset class="d-flex flex-column">
+                            <h2>Datos de contacto</h2>
+
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" placeholder="nombre@dominio.com" required>
+
+                            <label for="telefono">Teléfono:</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="1199887766" required>
+
+                            <label for="direccion">Dirección:</label>
+                            <input type="text" id="direccion" name="direccion" placeholder="Su dirección" minlength="6"
+                                required>
+                        </fieldset>
+                        <!-- FIN Cliente -->
+
+                        <!-- Envío -->
+                        <fieldset class="d-flex flex-column">
+                            <h2>Método de envío</h2>
+                            <div class="d-flex">
+                                <div class="radio-personalizado">
+                                    <input type="radio" id="retiro-en-local" name="envio" value="no" checked>
+                                    <label class="d-flex align-items-center" for="retiro-en-local">Retiro en local</label>
+                                </div>
+
+                                <div class="radio-personalizado">
+                                    <input type="radio" id="envio-a-domicilio" name="envio" value="si">
+                                    <label class="d-flex align-items-center" for="envio-a-domicilio">A domicilio</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <!-- FIN Cliente y Envío -->
+
+                        <!-- Pago -->
+                        <fieldset class="d-flex flex-column">
+                            <h2>Datos de pago</h2>
+
+                            <label for="numero-tarjeta">Número de tarjeta:</label>
+                            <input type="number" id="numero-tarjeta" name="numero-tarjeta"
+                                placeholder="ingrese los 16 digitos de su tarjeta" minlength="16" maxlength="16"
+                                pattern="[0-9]{16}" required>
+
+                            <div class="d-flex flex-column flex-sm-column flex-lg-row align-items-end">
+                                <label for="mes">Vencimiento:</label>
+                                <input type="month" id="mes" name="mes" min="2021-05" required>
+
+                                <label for="CVC">Cód. de seguridad:</label>
+                                <input type="password" id="CVC" name="CVC" placeholder="CVC" maxlength="3"
+                                    pattern="[0-9]{3}">
+                            </div>
+
+                            <label for="nombre-tarjeta">Nombre:</label>
+                            <input type="text" id="nombre-tarjeta" name="nombre-tarjeta"
+                                placeholder="Nombre del titular" minlength="6" required pattern="[A-Za-z]+">
+                        </fieldset>
+                        <!-- FIN Pago -->
+                    </form>
+                </section>
+            </div>
+            <!-- FIN Armado del pedido -->
+
+            <!-- INICIO Detalle del pedido -->
+            <div class="col-12 col-sm-12 col-lg-4">
+                <section class="detalle-de-pedido">
+                    <div class="contenedor-pegable d-flex flex-column">
+                        <!-- Detalle  - iPizza -->
+                        <section class="detalle-ipizza">
+                            <!--<figure>  ****************** QUITAR si hay estilos en CSS ****************** 
+                                <img src="img/modelos/i4-iPizza.jpg" class="img-fluid d-block mx-auto" title="i4 tu pizza armala con hasta 4 gustos" alt="i4 tu pizza armala con hasta 4 gustos">
+                                <figcaption class="text-center">i4-iPizza</figcaption>
+                            </figure> -->
+
+                            <h2 class="text-center">Detalle del pedido</h2>
+
+                            <div class="container-canvas">
+                                <canvas id="canvas" width="180" height="180"></canvas>
+                            </div>
+
+                            <ul class="detalle-porciones">
+                                <li class="d-flex justify-content-between">2 porciones de ***<div class="precio">***</div></li>
+                                <li class="d-flex justify-content-between">2 porciones de ***<div class="precio">***</div></li>
+                                <li class="d-flex justify-content-between">2 porciones de ***<div class="precio">***</div></li>
+                                <li class="d-flex justify-content-between">2 porciones de ***<div class="precio">***</div></li>
+                            </ul>
+                        </section>
+                        <!-- FIN Detalle  - iPizza -->
+
+                        <!-- Detalle - extras -->
+                        <section class="detalle-extras d-none">
+                            <ul>
+                                <li class="d-flex justify-content-between d-none">Orégano <div class="precio">***</div></li>
+                                <li class="d-flex justify-content-between d-none">Aceitunas <div class="precio">***</div></li>
+                                <li class="d-flex justify-content-between d-none">Doble queso <div class="precio">***</div></li>
+                                <li class="d-flex justify-content-between d-none">Borde de queso <div class="precio">***</div></li>
+                            </ul>
+                        </section>
+                        <!-- FIN Detalle - extras -->
+
+                        <section class="detalle-cono d-none">
+                            <ul>
+                                <li class="d-flex justify-content-between d-none">Cono de papas fritas <div class="precio">***</div></li>
+                            </ul>
+                        </section>
+
+                        <section class="detalle-envio">
+                            <ul>
+                                <li class="d-flex justify-content-between">Envío <div class="precio">0</div></li>
+                            </ul>
+                        </section>
+
+                        <section class="detalle-precio-total">
+                            <div class="precio precio-total">0</div>
+                        </section>
+
+                        <input class="btn-pagar mx-auto w-75" type="submit" value="pagar" form="armala-form">
+                    </div>
+                </section>
+            </div>
+            <!-- FIN Detalle del pedido -->
+        </div>
+    </section>
+
+     <!-- Footer -->
+     <footer class="footer container-fluid px-lg-5">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-lg-3 order-last order-lg-first">
+                <div class="nuestras-apps d-flex flex-column flex-sm-row flex-lg-column justify-content-center justify-content-lg-start">
+                    <a class="mx-auto mx-sm-0" href="https://play.google.com/" target="_blank">
+                        <img src="img/ipizza-google-play.png" title="Acceso directo a nuestra app en Google Play" alt="Link a nuestra aplicación para Android" loading="lazy">
+                    </a>
+                    <a class="mx-auto mx-sm-0" href="https://www.apple.com/la/app-store/" target="_blank">
+                        <img src="img/ipizza-app-store.png" title="Acceso directo a nuestra app en la App Store iOS" alt="Link a nuestra aplicación para iOS" loading="lazy">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-4 col-lg-3 order-1 order-sm-0">
+                <div class="formas-de-pago formas-de-pago d-flex flex-column align-items-center align-items-lg-start">
+                    <h3>Formas de pago</h3>
+                    
+                    <div class="iconos-formas-de-pago">
+                        <img src="img/medios-de-pago/visa.svg" title="Icono medio de pago Visa" alt="Medio de pago Visa">
+                        <img src="img/medios-de-pago/mastercard.svg" title="Icono Medio de pago Mastercard" alt="Medio de pago Mastercard">
+                        <img src="img/medios-de-pago/amex.svg" title="Icono Medio de pago American Express" alt="Medio de pago American Express">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-sm-4 col-lg-3">
+                <address class="d-flex flex-column">
+                    <a class="d-flex" title="Acceso directo a nuestro número de teléfono" href="tel:+54911123456">
+                        <div class="iconos-address">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <p class="d-flex align-items-center"><span>+</span>54 9 11 123 456</p>
+                    </a>
+                    <a class="d-flex" title="Acceso directo a nuestro correo electrónico" href="mailto:ipizza@gmail.com">
+                        <div class="iconos-address">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <p class="d-flex align-items-center">ipizza@gmail.com</p>
+                    </a>
+                    <a class="d-flex" title="Acceso directo a nuestra ubicación en google maps" href="https://goo.gl/maps/tUrCwJuNhYBzBX9G6" target="_blank">
+                        <div class="iconos-address">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <p class="d-flex align-items-center">Calle falsa 123. CABA</p>
+                    </a>
+                </address>
+            </div>
+
+            <div class="col-6 col-sm-4 col-lg-3">
+                <div class="otros-links d-flex flex-column align-items-end align-items-sm-start">
+                    <a title="Acceso directo a nuestra página de pedidos" href="pedidos.html">Pedidos</a>
+                    <a title="Acceso directo a nuestra página de promociones vigentes" href="#">Promociones</a>
+                    <a title="Acceso directo a nuestra página de empleos" href="#">Bolsa de trabajo</a>
+                </div>
+                <div class="redes-sociales d-flex justify-content-end justify-content-sm-start">
+                    <a href="https://facebook.com" title="Acceso directo a nuestra cuenta de Facebook"  target="_blank">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="https://instagram.com" title="Acceso directo a nuestra cuenta de Instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://youtube.com" title="Acceso directo a nuestra cuenta de Youtube" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <small class="d-block text-center">
+            intelligentPizza <span>&copy;</span> 2021 <span>|</span> Desarrollado por <h5>Ignacio Gutierrez</h5>
+        </small>
+    </footer>
+
+    <!-- JS -->
+    <script async src="js/main.js"></script>
+
+    <script>
+        const CX = 90;
+        const CY = 90;
+        const CANTIDAD_PORCIONES = 8;
+        const PIZZA_RADIO = 85;
+        const MAX_RADIO = Math.PI * 2;
+        const PATRON_SIZE = 38;
+      
+        const BORDER_COLOR = '#D6934D';
+        const MUZZARELLA_COLOR = '#FCC61A';
+        const PEPPERONI_COLOR = '#BF1304';
+        const JAMON_COLOR = '#C87778';
+        const TOMATE_COLOR = '#FF6347';
+        const SALSA_COLOR = '#7A0B00';
+        const VACIO_COLOR = '#212121';
+      
+        const CANVAS = document.getElementById('canvas');
+        const contexto = CANVAS.getContext('2d');
+
+        function crearPatronDeGusto(color= MUZZARELLA_COLOR, dibujo = false) {
+            // Creo una capa para el patron
+            let canvas = document.createElement('canvas');
+                canvas.width = PATRON_SIZE;
+                canvas.height = PATRON_SIZE;
+        
+            // Le pongo color de fondo a la capa
+            let contexto = canvas.getContext('2d');
+                contexto.fillStyle = MUZZARELLA_COLOR;
+                contexto.fillRect(0, 0, PATRON_SIZE, PATRON_SIZE);
+            
+            // Coordenadas de la capa donde se va a dibujar
+            const CORDS = [
+                [0, 0], [canvas.width, 0],
+                [canvas.width / 2, canvas.height / 2],
+                [0, canvas.height], [canvas.width, canvas.height]
+            ];
+            
+            // Dibujo en cada coordenada
+            if (dibujo) {
+                for (let index = 0, cantidad = CORDS.length; index < cantidad; index++) {
+                    let x = CORDS[index][0];
+                    let y = CORDS[index][1];
+                    contexto.moveTo(x, y);
+                    
+                    dibujo(contexto, x, y, color);
+                }
+            }
+            
+            return contexto.createPattern(canvas, "repeat");
+        }
+
+        /* ---------- INICIO DIBUJOS ---------- */
+        function dibujoCalabresa(contexto, x, y, color) {
+            contexto.fillStyle = color;
+
+            contexto.arc(x, y, 7, 0, MAX_RADIO, 0);
+            contexto.fill();
+        }
+
+        function dibujoJamon(contexto, x, y, color) {
+            contexto.fillStyle = color;
+
+            contexto.fillRect(x, y, 18, 10);
+            contexto.fill();
+        }
+
+        function dibujoNapolitana(contexto, x, y, color) {
+            contexto.strokeStyle = color;
+            contexto.lineWidth = 4;
+
+            contexto.arc(x, y, 7, 0, MAX_RADIO, 0);
+            contexto.stroke();
+        }
+        /* ---------- FIN DIBUJOS ---------- */
+
+        let muzzarellaPatron = crearPatronDeGusto();
+        let calabresaPatron = crearPatronDeGusto(PEPPERONI_COLOR, dibujoCalabresa);
+        let jamonPatron = crearPatronDeGusto(JAMON_COLOR, dibujoJamon);
+        let napolitanaPatron = crearPatronDeGusto(TOMATE_COLOR, dibujoNapolitana);
+
+        function dibujarPorcion(x, y, r, inicio, fin, color) {
+            contexto.beginPath();
+            contexto.fillStyle = color;
+            contexto.moveTo(x, y);
+            contexto.arc(x, y, r, inicio, fin, 0);
+            contexto.fill();
+        }
+      
+        function dibujarPorciones1Gusto(gusto, dibujar = true) {
+            let radianInicial, radianFinal, radianIntermedio, cx, cy;
+            const porcionSize = MAX_RADIO / CANTIDAD_PORCIONES;
+        
+            for (let index = 0; index < CANTIDAD_PORCIONES; index++) {
+                radianInicial = MAX_RADIO * (index / CANTIDAD_PORCIONES);
+                radianFinal = radianInicial + porcionSize;
+                radianIntermedio = radianInicial + (porcionSize / 2);
+            
+                cx = 3 * Math.cos(radianIntermedio) + CX;
+                cy = 3 * Math.sin(radianIntermedio) + CY;
+        
+                if(dibujar) {
+                    dibujarPorcion(cx, cy, PIZZA_RADIO, radianInicial, radianFinal, BORDER_COLOR);
+                    dibujarPorcion(cx, cy, PIZZA_RADIO * 0.93, radianInicial, radianFinal, SALSA_COLOR);
+                    dibujarPorcion(cx, cy, PIZZA_RADIO * 0.9, radianInicial, radianFinal, gusto);
+                } else {
+                    dibujarPorcion(cx, cy, PIZZA_RADIO, radianInicial, radianFinal, BORDER_COLOR);
+                    dibujarPorcion(cx, cy, PIZZA_RADIO, radianInicial, radianFinal, VACIO_COLOR);
+                }
+            }
+        }
+      
+        function dibujarPorciones2Gustos(gusto, indexInicial, dibujar = true) {
+            let i = 0;
+            let radianInicial, radianFinal, radianIntermedio, cx, cy;
+            const porcionSize = MAX_RADIO / CANTIDAD_PORCIONES;
+        
+            while (i < 4) {
+                radianInicial = MAX_RADIO * (indexInicial / CANTIDAD_PORCIONES);
+                radianFinal = radianInicial + porcionSize;
+                radianIntermedio = radianInicial + (porcionSize / 2);
+                
+                cx = 3 * Math.cos(radianIntermedio) + CX;
+                cy = 3 * Math.sin(radianIntermedio) + CY;
+                
+                if(dibujar) {
+                    dibujarPorcion(cx, cy, PIZZA_RADIO, radianInicial, radianFinal, BORDER_COLOR);
+                    dibujarPorcion(cx, cy, PIZZA_RADIO * 0.93, radianInicial, radianFinal, SALSA_COLOR);
+                    dibujarPorcion(cx, cy, PIZZA_RADIO * 0.9, radianInicial, radianFinal, gusto);
+                } else {
+                    dibujarPorcion(cx, cy, PIZZA_RADIO, radianInicial, radianFinal, BORDER_COLOR);
+                    dibujarPorcion(cx, cy, PIZZA_RADIO, radianInicial, radianFinal, VACIO_COLOR);
+                }
+                
+                indexInicial--;
+                i++;
+            }
+        }
+
+        function dibujarPorciones4Gustos(gusto, indexInicial, dibujar = true) {
+            let i = 0;
+            let radianInicial, radianFinal, radianIntermedio, cx, cy;
+            const porcionSize = MAX_RADIO / CANTIDAD_PORCIONES;
+        
+            while (i < 2) {
+                radianInicial = MAX_RADIO * (indexInicial / CANTIDAD_PORCIONES);
+                radianFinal = radianInicial + porcionSize;
+                radianIntermedio = radianInicial + (porcionSize / 2);
+                
+                cx = 3 * Math.cos(radianIntermedio) + CX;
+                cy = 3 * Math.sin(radianIntermedio) + CY;
+                
+                if(dibujar) {
+                    dibujarPorcion(cx, cy, PIZZA_RADIO, radianInicial, radianFinal, BORDER_COLOR);
+                    dibujarPorcion(cx, cy, PIZZA_RADIO * 0.93, radianInicial, radianFinal, SALSA_COLOR);
+                    dibujarPorcion(cx, cy, PIZZA_RADIO * 0.9, radianInicial, radianFinal, gusto);
+                } else {
+                    dibujarPorcion(cx, cy, PIZZA_RADIO, radianInicial, radianFinal, BORDER_COLOR);
+                    dibujarPorcion(cx, cy, PIZZA_RADIO, radianInicial, radianFinal, VACIO_COLOR);
+                }
+                
+                indexInicial--;
+                i++;
+            }
+        }
+
+        function limpiarCanvas(){
+            contexto.clearRect(0, 0, CANVAS.width, CANVAS.height);
+            dibujarPorciones1Gusto(muzzarellaPatron, false);
+        }
+
+        limpiarCanvas();
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

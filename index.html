@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+    <!-- SEO -->
+    <meta name="Description" content="Armala y pide tu pizza iPizza favorita a domicilio o a recoger en tu tienda más cercana, fácil y rápido. Disfruta de una experiencia única con nuestras pizzas a la piedra de auténtica masa e ingredientes frescos. ¡Deliciosas!">
+    <meta name="Keywords" content="pizza iPizza, pizza armala iPizza, pizza creala iPizza, pizza online iPizza, pizza menu iPizza, pizza app iPizza, pizzas iPizza, pizzas armala iPizza, pizzas creala iPizza, pizzas online iPizza, pizzas menu iPizza, pizzas app iPizza, pizza a la piedra, pizzas a la piedra, pizza con ingredientes frescos, pizzas con ingredientes frescos, pizza deliciosa, pizzas deliciosas, mejores pizzas">
+    <meta name="language" content="Spanish">
+    <meta name="copyright" content="iPizza">
+    <meta name="author" content="Ignacio Gutierrez">
+
+    <!-- Protocolo Open Graph -->
+    <meta property="og:site_name" content="iPizza">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ibb.co/bNWCBM1">
+    <meta property="og:author" content="Ignacio Gutierrez">
+    <meta property="og:title" content="Arma o crea tu pizza favorita | iPizza. Es simple, la armas la comes">
+    <meta property="og:description" content="Armala y pide tu pizza iPizza favorita a domicilio o a recoger en tu tienda más cercana, fácil y rápido. Disfruta de una experiencia única con nuestras pizzas a la piedra de auténtica masa e ingredientes frescos. ¡Deliciosas!">
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Arma o crea tu pizza favorita | iPizza">
+    <meta property="twitter:image" content="https://ibb.co/bNWCBM1">
+    <meta property="twitter:image:alt" content="Logo de iPizza, una porción de pizza calabresa con queso chorreando">
+    <meta property="twitter:description" content="Armala y pide tu pizza iPizza favorita a domicilio o a recoger en tu tienda más cercana, fácil y rápido. Disfruta de una experiencia única con nuestras pizzas a la piedra de auténtica masa e ingredientes frescos. ¡Deliciosas!">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#212121">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- CSS Animaciones -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- Fuentes externas -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Satisfy&display=swap" rel="stylesheet">
+
+    <!-- JS -->
+    <script async src="js/main.js"></script>
+
+    <!-- Iconos - Font Awesome -->
+    <script async src="https://kit.fontawesome.com/2a51f1f1ea.js" crossorigin="anonymous"></script>
+
+    <title>Arma o crea tu pizza favorita | iPizza - La armas, la comes</title>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header container-fluid fixed-top">
+        <div class="row align-items-center h-100">
+            <div class="col-2 col-sm-2 d-lg-none position-fixed">
+                <button class="btn-menu-mobile" type="button" data-bs-toggle="offcanvas" data-bs-target="#contenedor-menu-mobile" aria-controls="contenedor-menu-mobile">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="col-4 col-sm-4 offset-4 offset-sm-4 col-lg-3 offset-lg-0 col-xl-2 h-100">
+                <a href="index.html" title="logotipo de iPizza" class="logotipo h-100 d-flex align-items-center justify-content-center justify-content-lg-start">iPizza
+                    <div class="logo-container">
+                        <div class="logo-masa">
+                            <div class="logo-fetas"></div>
+                        </div>
+                        <div class="logo-queso chorreando"></div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg">
+                <nav id="menu" class="d-inline-block">
+                    <ul class="d-none d-lg-block m-0 px-1">
+                        <li class="d-inline-block mx-1"><a href="index.html" title="Acceso directo a nuestra página inicial">inicio</a></li>
+                        <li class="d-inline-block mx-1"><a href="pedidos.html" title="Acceso directo a nuestra página de pedidos">pedidos</a></li>
+                        <li class="d-inline-block mx-1"><a href="nosotros.html" title="Acceso directo a nuestra página sobre nosotros">nosotros</a></li>
+                        <li class="d-inline-block mx-1"><a href="contacto.html" title="Acceso directo a nuestra página de contacto">contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="col-lg-2 d-flex justify-content-end">
+                <button id="btn-armala-header" class="btn-armala shake" onclick="location.href = 'armala.html';">armala</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu mobile -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="contenedor-menu-mobile" aria-labelledby="label-menu-mobile">
+        <section class="menu-mobile">
+            <div class="offcanvas-header justify-content-center">
+                <h2 class="offcanvas-title" id="label-menu-mobile">Menú</h2>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column justify-content-between">
+                <nav id="menu-mobile">
+                    <ul class="m-0 px-1">
+                        <li class="d-block text-center m-3"><a href="index.html" title="Acceso directo a nuestra página inicial">inicio</a></li>
+                        <li class="d-block text-center m-3"><a href="pedidos.html" title="Acceso directo a nuestra página de pedidos">pedidos</a></li>
+                        <li class="d-block text-center m-3"><a href="nosotros.html" title="Acceso directo a nuestra página sobre nosotros">nosotros</a></li>
+                        <li class="d-block text-center m-3"><a href="contacto.html" title="Acceso directo a nuestra página de contacto">contacto</a></li>
+                    </ul>
+                </nav>
+                <small class="d-block text-center">
+                    intelligentPizza <span>&copy;</span> 2021 <span>|</span> Desarrollado por <h5>Ignacio Gutierrez</h5>
+                </small>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Publicidad -->
+    <section class="publicidad container-fluid h-visible">
+        <figure>
+            <video src="videos/laArmasLaComes.mp4" title="Video de mujer simpática disfrutando una deliciosa pizza iPizza" autoplay loop muted preload="auto" loading="eager"></video>
+            <figcaption class="frase-publicitaria">
+                <p>Es simple</p> 
+                <h2>La armas, la comes</h2>
+            </figcaption>
+        </figure>
+    </section>
+
+    <!-- Menu de pizzas -->
+    <section class="menu-de-pizzas container-fluid wrap-animation">
+        <div class="row h-100">
+            <div class="maestro-pizzero" data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-duration="500" data-aos-offset="200"></div>
+
+            <div class="col-12 col-sm-12 col-lg-9 offset-lg-3">
+                <h1 class="text-center" data-aos="fade" data-aos-easing="ease-in-sine" data-aos-duration="500" data-aos-delay="1000" data-aos-offset="100">Menú de pizzas</h1>
+
+                <div class="row justify-content-around">
+                    <div class="d-none d-md-block col-md-3 p-0 d-flex justify-content-center">
+                        <div class="tarjeta-de-producto tarjeta-i1" data-aos="fade-left" data-aos-easing="ease-in-sine" data-aos-duration="500" data-aos-delay="2500">
+                            <figure>
+                                <img src="img/modelos/i1-iPizza.jpg" title="i1 la pizza clásica, de un solo gusto" alt="i1 la pizza clásica, de un solo gusto">
+                                <figcaption>i1 la pizza clásica, de un solo gusto</figcaption>
+                            </figure>
+                            <button class="btn-armala shake" onclick="location.href = 'armala.html';">armala</button>
+                        </div>
+                    </div>
+                    <div class="d-none d-md-block col-md-3 p-0 d-flex justify-content-center">
+                        <div class="tarjeta-de-producto tarjeta-i4" data-aos="fade-left" data-aos-easing="ease-in-sine" data-aos-duration="500" data-aos-delay="2000">
+                            <figure>
+                                <img src="img/modelos/i4-iPizza.jpg" title="i4 tu pizza armala con hasta 4 gustos" alt="i4 tu pizza armala con hasta 4 gustos">
+                                <figcaption>i4 tu pizza armala con hasta 4 gustos</figcaption>
+                            </figure>
+                            <button class="btn-armala shake" onclick="location.href = 'armala.html';">armala</button>
+                        </div>
+                    </div>
+                    <div class="d-none d-md-block col-md-3 p-0 d-flex justify-content-center">
+                        <div class="tarjeta-de-producto tarjeta-i2" data-aos="fade-left" data-aos-easing="ease-in-sine" data-aos-duration="500" data-aos-delay="1500">
+                            <figure>
+                                <img src="img/modelos/i2-iPizza.jpg" title="i2 tu pizza armala con hasta 2 gustos" alt="i2 tu pizza armala con hasta 2 gustos">
+                                <figcaption>i2 tu pizza armala con hasta 2 gustos</figcaption>
+                            </figure>
+                            <button class="btn-armala shake" onclick="location.href = 'armala.html';">armala</button>
+                        </div>
+                    </div>
+
+                    <!-- INICIO carousel tarjetas de productos (Smartphones) -->
+                    <div class="col-12 col-sm-12 d-md-none">
+                        <div id="carousel-productos" class="carousel slide" data-bs-interval="false"
+                            data-bs-ride="false">
+                            <div class="carousel-inner h-100 d-flex align-items-center">
+                                <div class="carousel-item">
+                                    <div class="tarjeta-de-producto tarjeta-i1 mx-auto" data-aos="fade"
+                                        data-aos-easing="ease-in-sine" data-aos-duration="500" data-aos-delay="2000">
+                                        <figure>
+                                            <img src="img/modelos/i1-iPizza.jpg" title="i1 la pizza clásica, de un solo gusto" alt="i1 la pizza clásica, de un solo gusto">
+                                            <figcaption>i1 la pizza clásica, de un solo gusto</figcaption>
+                                        </figure>
+                                        <button class="btn-armala shake"
+                                            onclick="location.href = 'armala.html';">armala</button>
+                                    </div>
+                                </div>
+                                <div class="carousel-item active">
+                                    <div class="tarjeta-de-producto tarjeta-i4 mx-auto" data-aos="fade"
+                                        data-aos-easing="ease-in-sine" data-aos-duration="500" data-aos-delay="2000">
+                                        <figure>
+                                            <img src="img/modelos/i4-iPizza.jpg" title="i4 tu pizza armala con hasta 4 gustos" alt="i4 tu pizza armala con hasta 4 gustos">
+                                            <figcaption>i4 tu pizza armala con hasta 4 gustos</figcaption>
+                                        </figure>
+                                        <button class="btn-armala shake"
+                                            onclick="location.href = 'armala.html';">armala</button>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="tarjeta-de-producto tarjeta-i2 mx-auto" data-aos="fade"
+                                        data-aos-easing="ease-in-sine" data-aos-duration="500" data-aos-delay="2000">
+                                        <figure>
+                                            <img src="img/modelos/i2-iPizza.jpg" title="i2 tu pizza armala con hasta 2 gustos" alt="i2 tu pizza armala con hasta 2 gustos">
+                                            <figcaption>i2 tu pizza armala con hasta 2 gustos</figcaption>
+                                        </figure>
+                                        <button class="btn-armala shake"
+                                            onclick="location.href = 'armala.html';">armala</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="carousel-control-prev btn-carousel btn-carousel-anterior"
+                                data-aos="zoom-in-right" data-aos-easing="ease-in-sine" data-aos-duration="500"
+                                type="button" data-bs-target="#carousel-productos" data-bs-slide="prev">
+                                <i class="fas fa-angle-left carousel-control-prev-icon" aria-hidden="true"></i>
+                                <span class="visually-hidden">Opinion previa</span>
+                            </button>
+                            <button class="carousel-control-next btn-carousel btn-carousel-siguiente"
+                                data-aos="zoom-in-left" data-aos-easing="ease-in-sine" data-aos-duration="500"
+                                type="button" data-bs-target="#carousel-productos" data-bs-slide="next">
+                                <i class="fas fa-angle-right carousel-control-next-icon" aria-hidden="true"></i>
+                                <span class="visually-hidden">Opinion posterior</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- FIN carousel tarjetas de productos (Smartphones) -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestra calidad -->
+    <section class="nuestra-calidad container-fluid wrap-animation">
+        <article>
+            <figure>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-lg-6 offset-lg-1 order-lg-last d-flex justify-content-center">
+                    <img src="img/pizza-a-la-piedra.jpg" title="Pizza cocinándose en nuestro horno de barro" alt="Pizza cocinándose en nuestro horno de barro" loading="lazy" data-aos="fade-left" data-aos-easing="ease-in-sine" data-aos-duration="500">
+                </div>
+
+                <div class="col-12 col-sm-12 col-lg-5 d-flex align-items-center">
+                    <figcaption data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-duration="500">
+                        <header>
+                            <h2>Pizzas a la piedra</h2>
+                        </header>
+                        <p>
+                            Todas nuestras iPizzas son cocinadas en hornos de barro. Combinadas con las salsas de tu vieja para que sientas con intensidad un sabor único.
+                        </p>
+                    </figcaption>
+                </div>
+            </div>
+            </figure>
+        </article>
+        
+        <article>
+            <figure>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-lg-6 d-flex justify-content-center">
+                    <img src="img/ingredientes-frescos.jpg" title="Ingredientes frescos que utilizamos en nuestros productos" alt="Ingredientes frescos que utilizamos en nuestros productos" loading="lazy" data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-duration="500">
+                </div>
+                <div class="col-12 col-sm-12 col-lg-5 offset-lg-1 d-flex align-items-center">
+                    <figcaption data-aos="fade-left" data-aos-easing="ease-in-sine" data-aos-duration="500">
+                        <header>
+                            <h2>Ingredientes frescos</h2>
+                        </header>
+                        <p>
+                            Seleccionados de las mejores huertas y recogidos en su mejor momento de maduración, para que puedas disfrutar del sabor más fresco en tus iPizzas.
+                        </p>
+                    </figcaption>
+                </div>
+            </div>
+            </figure>
+        </article>
+    </section>
+
+    <!-- Opiniones -->
+    <section class="opiniones container-fluid h-visible wrap-animation">
+        <div class="row h-100">
+            <div id="carousel-opiniones" class="carousel slide h-75" data-bs-ride="carousel">
+                <div class="carousel-inner" data-aos="flip-down" data-aos-easing="ease-in-sine" data-aos-duration="600" data-aos-offset="200">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <article class="d-block mx-auto">
+                            <div class="opinion-estrellas text-center">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="opinion">
+                                <p>Estaba espectacular !! y el precio es aceptable. Es muy fácil el armado, sin tantas vueltas y la app indica en cuanto tiempo estará lista.</p>
+                                <p>Soy un programador, vivo a base de pizzas y la verdad que me sorprendieron. Sin dudas "volveré".</p>
+                            </div>
+                            <header class="text-center">
+                                <h4>Arnold C</h4>
+                            </header>
+                        </article>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="10000">
+                        <article class="d-block mx-auto">
+                            <div class="opinion-estrellas text-center">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="opinion">
+                                <p>Muy buena calidad y precios. Tiempo de preparación, lo normal 10"/15" por lo general. Despachan los pedidos muy rápidamente. </p>
+                                <p>Excelente opción para salir del paso.</p>
+                            </div>
+                            <header class="text-center">
+                                <h4>Martina Delgado</h4>
+                            </header>
+                        </article>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="10000">
+                        <article class="d-block mx-auto">
+                            <div class="opinion-estrellas text-center">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="opinion">
+                                <p>Sus pizzas son muy ricas, pero el pedido estaba incompleto. Solucionaron mi problema rápidamente. Y fueron muy amables, hasta me enviaron unas porciones de papas de regalo.</p>
+                            </div>
+                            <header class="text-center">
+                                <h4>Guillermo Nuñez</h4>
+                            </header>
+                        </article>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev btn-carousel btn-carousel-anterior" data-aos="zoom-in-right" data-aos-easing="ease-in-sine" data-aos-duration="500" type="button" data-bs-target="#carousel-opiniones"
+                    data-bs-slide="prev">
+                    <i class="fas fa-angle-left carousel-control-prev-icon" aria-hidden="true"></i>
+                    <span class="visually-hidden">Opinion previa</span>
+                </button>
+                <button class="carousel-control-next btn-carousel btn-carousel-siguiente" data-aos="zoom-in-left" data-aos-easing="ease-in-sine" data-aos-duration="500" type="button" data-bs-target="#carousel-opiniones"
+                    data-bs-slide="next">
+                    <i class="fas fa-angle-right carousel-control-next-icon" aria-hidden="true"></i>
+                    <span class="visually-hidden">Opinion posterior</span>
+                </button>
+            </div>
+
+            <button class="btn-ver-todas d-block mx-auto mt-2" data-aos="zoom-in-up" data-aos-easing="ease-in-sine" data-aos-duration="500">ver todas <i class="far fa-comments"></i></button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer container-fluid px-lg-5">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-lg-3 order-last order-lg-first">
+                <div class="nuestras-apps d-flex flex-column flex-sm-row flex-lg-column justify-content-center justify-content-lg-start">
+                    <a class="mx-auto mx-sm-0" href="https://play.google.com/" target="_blank">
+                        <img src="img/ipizza-google-play.png" title="Acceso directo a nuestra app en Google Play" alt="Link a nuestra aplicación para Android" loading="lazy">
+                    </a>
+                    <a class="mx-auto mx-sm-0" href="https://www.apple.com/la/app-store/" target="_blank">
+                        <img src="img/ipizza-app-store.png" title="Acceso directo a nuestra app en la App Store iOS" alt="Link a nuestra aplicación para iOS" loading="lazy">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-4 col-lg-3 order-1 order-sm-0">
+                <div class="formas-de-pago formas-de-pago d-flex flex-column align-items-center align-items-lg-start">
+                    <h3>Formas de pago</h3>
+                    
+                    <div class="iconos-formas-de-pago">
+                        <img src="img/medios-de-pago/visa.svg" title="Icono medio de pago Visa" alt="Medio de pago Visa">
+                        <img src="img/medios-de-pago/mastercard.svg" title="Icono Medio de pago Mastercard" alt="Medio de pago Mastercard">
+                        <img src="img/medios-de-pago/amex.svg" title="Icono Medio de pago American Express" alt="Medio de pago American Express">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-sm-4 col-lg-3">
+                <address class="d-flex flex-column">
+                    <a class="d-flex" title="Acceso directo a nuestro número de teléfono" href="tel:+54911123456">
+                        <div class="iconos-address">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <p class="d-flex align-items-center"><span>+</span>54 9 11 123 456</p>
+                    </a>
+                    <a class="d-flex" title="Acceso directo a nuestro correo electrónico" href="mailto:ipizza@gmail.com">
+                        <div class="iconos-address">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <p class="d-flex align-items-center">ipizza@gmail.com</p>
+                    </a>
+                    <a class="d-flex" title="Acceso directo a nuestra ubicación en google maps" href="https://goo.gl/maps/tUrCwJuNhYBzBX9G6" target="_blank">
+                        <div class="iconos-address">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <p class="d-flex align-items-center">Calle falsa 123. CABA</p>
+                    </a>
+                </address>
+            </div>
+
+            <div class="col-6 col-sm-4 col-lg-3">
+                <div class="otros-links d-flex flex-column align-items-end align-items-sm-start">
+                    <a title="Acceso directo a nuestra página de pedidos" href="pedidos.html">Pedidos</a>
+                    <a title="Acceso directo a nuestra página de promociones vigentes" href="#">Promociones</a>
+                    <a title="Acceso directo a nuestra página de empleos" href="#">Bolsa de trabajo</a>
+                </div>
+                <div class="redes-sociales d-flex justify-content-end justify-content-sm-start">
+                    <a href="https://facebook.com" title="Acceso directo a nuestra cuenta de Facebook"  target="_blank">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="https://instagram.com" title="Acceso directo a nuestra cuenta de Instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://youtube.com" title="Acceso directo a nuestra cuenta de Youtube" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <small class="d-block text-center">
+            intelligentPizza <span>&copy;</span> 2021 <span>|</span> Desarrollado por <h5>Ignacio Gutierrez</h5>
+        </small>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

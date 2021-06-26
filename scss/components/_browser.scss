@@ -1,0 +1,21 @@
+html {
+    scroll-behavior: smooth; // Scroll de desplazamiento de links internos mas lento
+}
+
+::selection { 
+    background: var(--color-queso);
+    color: var(--color-gris);
+}
+
+/* -------- Browser Chrome-------- */
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: var(--color-blanco);
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--color-gris);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-queso); 
+}

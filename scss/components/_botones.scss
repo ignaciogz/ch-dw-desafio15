@@ -1,0 +1,162 @@
+@import '../base/media-query';
+
+/* -------- BOTONES -------- */
+button {
+    border-radius: 25px;
+    border-color: transparent;
+    color: var(--color-gris);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.2rem 0.8rem;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+.btn-menu-mobile {
+    background-color: var(--color-gris);
+    border-radius: unset;
+    padding: 0;
+
+    i {
+        color: var(--color-blanco);
+        font-size: 1.8rem;
+    }
+}
+
+.btn-close {
+    background: unset;
+    height: auto;
+    position: absolute;
+        right: 1rem;
+    width: auto;
+        
+
+    i {
+        font-size: 1.5rem;
+    }
+
+    &:hover {
+        color: var(--color-queso) !important;
+        filter: drop-shadow(0 0 10px #F8F9F166);
+    }
+
+    &:focus {
+        box-shadow: unset;
+    }
+}
+
+.btn-armala { 
+    background-color: var(--color-queso) !important;
+    cursor: url("../img/mmm.png"), auto !important;
+    font-family: var(--font-family-ipizza);
+    transition: 1s !important;
+
+    &:hover {
+        background-color: var(--color-gris) !important;
+        border-color: var(--color-queso);
+        color: var(--color-blanco);
+    }
+}
+
+.btn-ver-todas {
+    width: 25%;
+
+    i {
+        font-size: 1.3rem;
+    }
+    &:hover {
+        background-color: var(--color-queso);
+        transition: 0.6s;
+    }
+}
+
+.btn-mostrar-mas-fotos {
+    background-color: var(--color-gris);
+    border-radius: unset;
+    color: var(--color-blanco);
+    padding: 0.5vh 0;
+    width: 100%;
+    i {
+        font-size: 1.3rem;
+    }
+
+    &:hover {
+        background-color: var(--color-queso);
+        color: var(--color-gris);
+        transition: 1s;
+    }
+}
+
+.btn-pagar {
+    border-color: var(--color-blanco);
+    
+    &:hover {
+        border-color: var(--color-blanco);
+    }
+}
+
+/* INICIO Botones de switch para formularios */
+.btn-switch {
+    input[type=checkbox].switch-input {
+        display:none; 
+    }
+    
+    label {
+        cursor: pointer;
+    }
+    
+    .switch-label {
+        background: var(--color-gris);
+        border: 2px solid var(--color-queso);
+        border-radius: 25px;
+        display: inline-block;
+        height: 33px;
+        position: relative;
+        transition: 0.4s;
+        width: 65px;
+
+        &::before {
+            content: '';
+            background: var(--color-blanco);
+            border-radius: 25px;
+            display: block;
+            height: 25px;
+            position: absolute;
+                top: 2px;
+                left: 3px;
+            transition: 0.4s;
+            width: 25px;
+        }
+    }
+      
+    input[type=checkbox].switch-input:checked + label.switch-label::before {
+        background: var(--color-queso);
+        left: 33px;
+    }
+}
+/* FIN Botones de switch */
+
+@include mediaq-breakpoint-between(sm, lg) {
+    .btn-armala {
+        font-size: 2rem;
+        height: 4.2rem;
+        position: fixed;
+            bottom: 2vh;
+            left: 5vw;
+        width: 90vw;
+    }
+
+    .btn-ver-todas {
+        width: 50%;
+    }
+}
+
+@include mediaq-breakpoint {
+    .btn-armala {
+        display: none;
+    }
+
+    .btn-ver-todas {
+        width: 75%;
+    }
+}

@@ -1,0 +1,77 @@
+@import '../base/mixins';
+@import '../base/media-query';
+
+/* -------- nosotros.html -------- */
+.historia {
+    article {
+        padding: var(--padding-vertical) var(--padding-horizontal);
+    }
+
+    &::before {
+        @include background-full(url(../img/bg-nosotros.jpg));
+        filter: brightness(0.4);
+    }
+}   
+
+.historia figure {
+    margin: 0;
+    position: relative;
+
+    img {
+        border: 0.5rem outset var(--color-gris);
+        transform: rotate(-5deg);
+        width: 100%;
+    }
+
+    figcaption {
+        width: 100%;
+        
+        h1 {
+            color: var(--color-queso);
+        }
+        p{
+            text-align: justify;
+        }
+    }
+}
+
+.galeria {
+    background: map-get($gradientes, UIg-DeepSpace);
+    padding: 0;
+
+    img {
+        height: 44vh;
+        width: 100%;
+    }
+}
+
+@include mediaq-breakpoint-max(md) {
+    .historia,
+    .historia figure {
+        height: auto;
+    }
+
+    .historia article {
+        padding: 0;
+    }
+
+    .galeria img {
+        height: 30vh;
+    }
+}
+
+@include mediaq-breakpoint {
+    .historia article {
+        padding: 0;
+    }
+
+    .historia figure {
+        img {
+            width: 90%;
+        }
+    
+        figcaption {
+            margin-top: 2rem;
+        }
+    }
+}

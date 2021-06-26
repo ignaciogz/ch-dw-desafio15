@@ -1,0 +1,26 @@
+@import 'components/custom-properties';
+
+@import 'layout/general';
+@import 'layout/header';
+@import 'layout/logotipo';
+
+@import 'views/index';
+@import 'views/pedidos';
+@import 'views/nosotros';
+@import 'views/contacto';
+@import 'views/armala';
+
+@import 'views/error';
+
+@import 'layout/footer';
+@import 'layout/flex';
+
+@import 'components/menu';
+@import 'components/menu-mobile';
+@import 'components/tarjetas';
+@import 'components/carousel';
+@import 'components/botones';
+@import 'components/formularios';
+@import 'components/animaciones';
+@import 'components/browser';
+@import 'components/hacks';

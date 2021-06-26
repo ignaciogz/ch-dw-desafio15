@@ -1,0 +1,4 @@
+@function calcular-max-breakpoint($valor-media-final) {
+    $resultado: $valor-media-final - $mq-breakpoints-hack;
+    @return $resultado;
+}

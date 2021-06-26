@@ -1,0 +1,84 @@
+@import 'config';
+@import 'functions';
+
+// Creo lista auxiliar de claves para saber: El primer, el siguiente (si es necesario) y el ultimo media.
+$lista-mq-breakpoints:  map-keys($mq-breakpoints);
+
+// Obtengo la primera media y su valor
+$clave-media-inicial: nth($lista-mq-breakpoints, 1);
+$valor-media-inicial: map_get($mq-breakpoints,  $clave-media-inicial);
+
+// Obtengo la ultima media y su valor
+$posicion-ultimo-breakpoint: length($lista-mq-breakpoints);        
+$clave-ultimo-breakpoint: nth($lista-mq-breakpoints, $posicion-ultimo-breakpoint);
+$valor-ultimo-breakpoint: map_get($mq-breakpoints, $clave-ultimo-breakpoint);
+
+
+@mixin mediaq-breakpoint($media: ultra-small) {
+    @if $media==ultra-small {
+        $valor-media-final: calcular-max-breakpoint($valor-media-inicial);
+        
+        @media only screen and (max-width: $valor-media-final) {
+            @content;
+        }
+    }
+
+    @if map_has_key($mq-breakpoints, $media) {
+
+        @if $media==$clave-ultimo-breakpoint {
+            @media only screen and (min-width: $valor-ultimo-breakpoint) {
+                @content;
+            }
+        }
+
+        @else {
+            // Obtengo la media final del rango y su valor
+            $posicion-media-final: index($lista-mq-breakpoints, $media) + 1;
+
+                $clave-media-final: nth($lista-mq-breakpoints, $posicion-media-final);
+                $valor-media-final: map_get($mq-breakpoints, $clave-media-final);
+
+            $valor-media-final: calcular-max-breakpoint($valor-media-final);
+
+            @media only screen and (min-width: $valor-media-inicial) and (max-width: $valor-media-final) {
+                @content;
+            }
+        }
+    }
+}
+
+
+// Media desde 0 hasta el breakpoint pasado por parametro "incluido"
+@mixin mediaq-breakpoint-max($media-max) {
+    @if map_has_key($mq-breakpoints, $media-max) and ( $media-max != $clave-ultimo-breakpoint) {
+
+        // Obtengo la media final del rango y su valor
+        $posicion-media-final: index($lista-mq-breakpoints, $media-max) + 1;
+
+            $clave-media-final: nth($lista-mq-breakpoints, $posicion-media-final);
+            $valor-media-final: map_get($mq-breakpoints, $clave-media-final);
+
+        $valor-media-final: calcular-max-breakpoint($valor-media-final);
+
+        @media only screen and (max-width: $valor-media-final) {
+            @content;
+        }
+    }
+}
+
+
+// Media desde el primer parametro hasta el 2do "sin incluir"
+@mixin  mediaq-breakpoint-between($media-inicial, $media-final) {
+    @if map_has_key($mq-breakpoints, $media-inicial) and map_has_key($mq-breakpoints, $media-final) {
+
+        
+        $valor-media-inicial: map_get($mq-breakpoints, $media-inicial);
+        $valor-media-final: map_get($mq-breakpoints, $media-final);
+
+        $valor-media-final: calcular-max-breakpoint($valor-media-final);
+
+        @media only screen and (min-width: $valor-media-inicial) and (max-width: $valor-media-final) {
+            @content;
+        }
+    }
+}
