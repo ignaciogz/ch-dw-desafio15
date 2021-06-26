@@ -69,10 +69,10 @@ function init() {
     */
 
     const gustoPatron = {
-        'muzzarella': muzzarellaPatron, 
-        'jamon': jamonPatron,
-        'napolitana': napolitanaPatron,
-        'calabresa': calabresaPatron
+        'muzzarella': canvasPizza.muzzarellaPatron, 
+        'jamon': canvasPizza.jamonPatron,
+        'napolitana': canvasPizza.napolitanaPatron,
+        'calabresa': canvasPizza.calabresaPatron
     }
 
     const listaDePrecios = {
@@ -118,7 +118,7 @@ function init() {
 
         const ubicacionEnCanvas = obtenerUbicacionEnCanvas(cantidadGustos, IDSelect);
 
-        dibujarPorciones(cantidadPorciones, gustoPatron[nombreGusto], ubicacionEnCanvas, mostrar);
+        canvasPizza.dibujarPorciones(cantidadPorciones, gustoPatron[nombreGusto], ubicacionEnCanvas, mostrar);
     }
 
     function obtenerUbicacionEnCanvas(cantidadGustos, IDSelect) {
@@ -192,7 +192,7 @@ function init() {
                 $elementosDetallePorciones[i].classList.toggle('d-none');
             }
             
-            limpiarCanvas();
+            canvasPizza.limpiarCanvas();
             precioTotal();
         });
     }
