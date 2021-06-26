@@ -76,7 +76,7 @@ function init() {
     }
 
     const listaDePrecios = {
-        precioPorcion : {
+        precioPorcion: {
             'muzzarella': 30, 
             'jamon': 42,
             'napolitana': 45,
@@ -100,13 +100,13 @@ function init() {
         /* Cada Select */
         $desplegables.forEach(asociarEventos);
 
-        function asociarEventos(desplegable){
+        function asociarEventos(desplegable) {
             desplegable.addEventListener('change', calcularCostos);
             desplegable.addEventListener('change', mostrarPorciones);
         }
     }
     
-    function mostrarPorciones(event){
+    function mostrarPorciones(event) {
         const nombreGusto = event.target.value;
         const mostrar = nombreGusto != "Default" ? true : false;
 
