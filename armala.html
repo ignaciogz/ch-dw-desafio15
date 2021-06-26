@@ -548,35 +548,12 @@
             contexto.fill();
         }
       
-        function dibujarPorciones1Gusto(gusto, dibujar = true) {
-            let radianInicial, radianFinal, radianIntermedio, cx, cy;
-            const porcionSize = MAX_RADIO / CANTIDAD_PORCIONES;
-        
-            for (let index = 0; index < CANTIDAD_PORCIONES; index++) {
-                radianInicial = MAX_RADIO * (index / CANTIDAD_PORCIONES);
-                radianFinal = radianInicial + porcionSize;
-                radianIntermedio = radianInicial + (porcionSize / 2);
-            
-                cx = 3 * Math.cos(radianIntermedio) + CX;
-                cy = 3 * Math.sin(radianIntermedio) + CY;
-        
-                if(dibujar) {
-                    dibujarPorcion(cx, cy, PIZZA_RADIO, radianInicial, radianFinal, BORDER_COLOR);
-                    dibujarPorcion(cx, cy, PIZZA_RADIO * 0.93, radianInicial, radianFinal, SALSA_COLOR);
-                    dibujarPorcion(cx, cy, PIZZA_RADIO * 0.9, radianInicial, radianFinal, gusto);
-                } else {
-                    dibujarPorcion(cx, cy, PIZZA_RADIO, radianInicial, radianFinal, BORDER_COLOR);
-                    dibujarPorcion(cx, cy, PIZZA_RADIO, radianInicial, radianFinal, VACIO_COLOR);
-                }
-            }
-        }
-      
-        function dibujarPorciones2Gustos(gusto, indexInicial, dibujar = true) {
+        function dibujarPorciones(cantidadPorciones, gusto, indexInicial, dibujar = true) {
             let i = 0;
             let radianInicial, radianFinal, radianIntermedio, cx, cy;
             const porcionSize = MAX_RADIO / CANTIDAD_PORCIONES;
         
-            while (i < 4) {
+            while (i < cantidadPorciones) {
                 radianInicial = MAX_RADIO * (indexInicial / CANTIDAD_PORCIONES);
                 radianFinal = radianInicial + porcionSize;
                 radianIntermedio = radianInicial + (porcionSize / 2);
@@ -597,34 +574,7 @@
                 i++;
             }
         }
-
-        function dibujarPorciones4Gustos(gusto, indexInicial, dibujar = true) {
-            let i = 0;
-            let radianInicial, radianFinal, radianIntermedio, cx, cy;
-            const porcionSize = MAX_RADIO / CANTIDAD_PORCIONES;
         
-            while (i < 2) {
-                radianInicial = MAX_RADIO * (indexInicial / CANTIDAD_PORCIONES);
-                radianFinal = radianInicial + porcionSize;
-                radianIntermedio = radianInicial + (porcionSize / 2);
-                
-                cx = 3 * Math.cos(radianIntermedio) + CX;
-                cy = 3 * Math.sin(radianIntermedio) + CY;
-                
-                if(dibujar) {
-                    dibujarPorcion(cx, cy, PIZZA_RADIO, radianInicial, radianFinal, BORDER_COLOR);
-                    dibujarPorcion(cx, cy, PIZZA_RADIO * 0.93, radianInicial, radianFinal, SALSA_COLOR);
-                    dibujarPorcion(cx, cy, PIZZA_RADIO * 0.9, radianInicial, radianFinal, gusto);
-                } else {
-                    dibujarPorcion(cx, cy, PIZZA_RADIO, radianInicial, radianFinal, BORDER_COLOR);
-                    dibujarPorcion(cx, cy, PIZZA_RADIO, radianInicial, radianFinal, VACIO_COLOR);
-                }
-                
-                indexInicial--;
-                i++;
-            }
-        }
-
         function limpiarCanvas(){
             contexto.clearRect(0, 0, CANVAS.width, CANVAS.height);
             dibujarPorciones1Gusto(muzzarellaPatron, false);
