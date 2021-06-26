@@ -114,37 +114,26 @@ function init() {
 
         const $tarjetaSeleccionada = document.querySelector('.active .tarjeta-de-producto');
         const cantidadGustos = parseInt($tarjetaSeleccionada.getAttribute('data-ipizza-cant-gustos'));
+        const cantidadPorciones = calcularCantidadPorciones(cantidadGustos);
 
-        if (cantidadGustos == 1) {
-            dibujarPorciones1Gusto(gustoPatron[nombreGusto], mostrar);
-        }
+        const ubicacionEnCanvas = obtenerUbicacionEnCanvas(cantidadGustos, IDSelect);
 
-        if (cantidadGustos == 2) {
-            switch (IDSelect) {
-                case 1:
-                    dibujarPorciones2Gustos(gustoPatron[nombreGusto], 8, mostrar);
-                    break;
-                case 2:
-                    dibujarPorciones2Gustos(gustoPatron[nombreGusto], 4, mostrar);
-                    break;
-            }
-        }
+        dibujarPorciones(cantidadPorciones, gustoPatron[nombreGusto], ubicacionEnCanvas, mostrar);
+    }
 
-        if (cantidadGustos == 4) {
-            switch (IDSelect) {
-                case 1:
-                    dibujarPorciones4Gustos(gustoPatron[nombreGusto], 8, mostrar);
-                    break;
-                case 2:
-                    dibujarPorciones4Gustos(gustoPatron[nombreGusto], 6, mostrar);
-                    break;
-                case 3:
-                    dibujarPorciones4Gustos(gustoPatron[nombreGusto], 4, mostrar);
-                    break;
-                case 4:
-                    dibujarPorciones4Gustos(gustoPatron[nombreGusto], 2, mostrar);
-                    break;
-            }
+    function obtenerUbicacionEnCanvas(cantidadGustos, IDSelect) {
+        const ubicacion = IDSelect - 1;
+        const ubicaciones1Gusto = [8];
+        const ubicaciones2Gustos = [8,4];
+        const ubicaciones4Gustos = [8, 4, 6, 2];
+        
+        switch (cantidadGustos) {
+            case 1:
+                return ubicaciones1Gusto[ubicacion];
+            case 2:
+                return ubicaciones2Gustos[ubicacion];
+            case 4:
+                return ubicaciones4Gustos[ubicacion];
         }
     }
     
