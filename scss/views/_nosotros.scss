@@ -1,8 +1,8 @@
-@import '../base/mixins';
 @import '../base/media-query';
+@import '../base/mixins';
 
 /* -------- nosotros.html -------- */
-.historia {
+section.historia {
     article {
         padding: var(--padding-vertical) var(--padding-horizontal);
     }
@@ -17,7 +17,7 @@
     }
 }
 
-.historia figure {
+section.historia figure {
     margin: 0;
     position: relative;
 
@@ -39,7 +39,7 @@
     }
 }
 
-.galeria {
+section.galeria {
     background: map-get($gradientes, UIg-DeepSpace);
     padding: 0;
 
@@ -50,26 +50,63 @@
 }
 
 @include mediaq-breakpoint-max(md) {
-    .historia,
-    .historia figure {
+    section.historia {
+        height: auto;
+
+        article {
+            padding: 0;
+        }
+    }
+
+    section.historia figure {
         height: auto;
     }
 
-    .historia article {
-        padding: 0;
-    }
-
-    .galeria img {
+    section.galeria img {
         height: 30vh;
     }
 }
 
+@include mediaq-breakpoint(md) {
+    section.historia {
+        .no-webp &::before {
+            @include background(url(../img/background/bg-nosotros-tablet.jpg));
+        }
+        
+        .webp &::before {
+            @include background(url(../img/background/bg-nosotros-tablet.webp));
+        }
+    }
+}
+
+@include mediaq-breakpoint(sm) {
+    section.historia {
+        .no-webp &::before {
+            @include background(url(../img/background/bg-nosotros-mobile-xl.jpg));
+        }
+        
+        .webp &::before {
+            @include background(url(../img/background/bg-nosotros-mobile-xl.webp));
+        }
+    }
+}
+
 @include mediaq-breakpoint {
-    .historia article {
-        padding: 0;
+    section.historia {
+        article {
+            padding: 0;
+        }
+    
+        .no-webp &::before {
+            @include background(url(../img/background/bg-nosotros-mobile.jpg));
+        }
+        
+        .webp &::before {
+            @include background(url(../img/background/bg-nosotros-mobile.webp));
+        }
     }
 
-    .historia figure {
+    section.historia figure {
         img {
             width: 90%;
         }

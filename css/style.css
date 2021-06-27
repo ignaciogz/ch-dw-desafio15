@@ -254,11 +254,11 @@ strong {
     height: 85px;
   }
 }
-.tarjeta-de-producto, .contacto form, .contacto iframe, .consulta-pedido .contenedor, .opiniones article {
+.tarjeta-de-producto, section.contacto form#contacto-form, section.contacto iframe, section.consulta-pedido .contenedor, section.opiniones article {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.55), 0 6px 20px 0 rgba(0, 0, 0, 0.54);
 }
 
-.tarjeta-de-producto:hover, .contacto form:hover, .contacto iframe:hover {
+.tarjeta-de-producto:hover, section.contacto form#contacto-form:hover, section.contacto iframe:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.55), 0 6px 20px 0 rgba(0, 0, 0, 0.54);
 }
 
@@ -291,15 +291,15 @@ nav#menu-mobile a:hover::before, nav#menu a:hover::before {
 }
 
 /* -------- index.html -------- */
-.publicidad {
+section.publicidad {
   padding: 0;
 }
-.publicidad video {
+section.publicidad video {
   height: var(--altura-visible);
   object-fit: fill;
   width: 100%;
 }
-.publicidad .frase-publicitaria {
+section.publicidad .frase-publicitaria {
   color: var(--color-gris);
   font-size: 2.8rem;
   font-weight: bold;
@@ -308,19 +308,17 @@ nav#menu-mobile a:hover::before, nav#menu a:hover::before {
   left: 68vw;
   text-shadow: 2px 2px 4px var(--color-blanco);
 }
-.publicidad .frase-publicitaria h2,
-.publicidad .frase-publicitaria p {
+section.publicidad .frase-publicitaria h2,
+section.publicidad .frase-publicitaria p {
   margin: 0;
 }
 
-.menu-de-pizzas {
+section.menu-de-pizzas {
   background: linear-gradient(to top, #ada996, #f2f2f2, #dbdbdb, #eaeaea);
 }
-.menu-de-pizzas .maestro-pizzero {
+section.menu-de-pizzas .maestro-pizzero {
   content: "";
-  background-image: url(../img/background/bg-maestro-pizzero.svg);
-  background-size: 50% 110%;
-  background-position: -39% 75%;
+  background: url(../img/background/bg-maestro-pizzero.svg) -39% 75%/50% 110%;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -328,31 +326,29 @@ nav#menu-mobile a:hover::before, nav#menu a:hover::before {
   right: 0;
   background-repeat: no-repeat;
 }
-.menu-de-pizzas #carousel-productos {
+section.menu-de-pizzas #carousel-productos {
   height: 400px;
 }
 
-.nuestra-calidad {
+section.nuestra-calidad {
   padding: var(--padding-vertical) 0;
 }
-.nuestra-calidad article {
+section.nuestra-calidad article {
   filter: grayscale(1);
   padding: 0 var(--padding-horizontal);
   position: relative;
   transition: 1s;
 }
-.nuestra-calidad article:last-child {
+section.nuestra-calidad article:last-child {
   padding-top: var(--padding-vertical);
 }
-.nuestra-calidad article:hover {
+section.nuestra-calidad article:hover {
   filter: grayscale(0);
   transition: 1s;
 }
-.nuestra-calidad::before {
+section.nuestra-calidad::before {
   content: "";
-  background-image: url(../img/background/bg-nuestra-calidad.jpg);
-  background-size: cover;
-  background-position: top;
+  background: url(../img/background/bg-nuestra-calidad.jpg) top/cover;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -360,171 +356,208 @@ nav#menu-mobile a:hover::before, nav#menu a:hover::before {
   right: 0;
   filter: grayscale(1);
 }
-.webp .nuestra-calidad::before {
-  background-image: url(../img/background/bg-nuestra-calidad.webp);
-  background-size: cover;
-  background-position: top;
+.webp section.nuestra-calidad::before {
+  background: url(../img/background/bg-nuestra-calidad.webp) top/cover;
 }
 
-.nuestra-calidad figure img {
+section.nuestra-calidad figure img {
   border-radius: var(--borde-general);
   height: 100%;
   width: 100%;
 }
-.nuestra-calidad figure figcaption {
+section.nuestra-calidad figure figcaption {
   width: 100%;
 }
-.nuestra-calidad figure figcaption p {
+section.nuestra-calidad figure figcaption p {
   line-height: 40px;
   word-spacing: 4px;
 }
 
-.opiniones {
-  background-image: url(../img/background/bg-opiniones.jpg);
-  background-size: cover;
-  background-position: center;
+section.opiniones {
+  background: url(../img/background/bg-opiniones.jpg) center/cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
   height: 440px;
 }
-.webp .opiniones::before {
-  background-image: url(../img/background/bg-nuestra-calidad.webp);
-  background-size: cover;
-  background-position: center;
+.webp section.opiniones::before {
+  background: url(../img/background/bg-opiniones.webp) center/cover;
 }
 
-.opiniones article {
+section.opiniones article {
   background-color: #F8F9F1E6;
   border-radius: var(--borde-general);
   color: var(--color-gris);
   padding: 1rem;
   width: 50%;
 }
-.opiniones article .opinion-estrellas {
+section.opiniones article .opinion-estrellas {
   margin-bottom: 1rem;
 }
-.opiniones article .opinion-estrellas i {
+section.opiniones article .opinion-estrellas i {
   color: var(--color-queso);
 }
-.opiniones article .opinion {
+section.opiniones article .opinion {
   font-style: italic;
   line-height: 1.5rem;
   text-align: justify;
   text-indent: 1rem;
   word-spacing: 0.1vw;
 }
-.opiniones article .opinion p {
+section.opiniones article .opinion p {
   font-size: 0.8rem;
 }
-.opiniones article .opinion p:first-child {
+section.opiniones article .opinion p:first-child {
   text-indent: 0;
 }
-.opiniones article .opinion p:first-child::before, .opiniones article .opinion p:last-child::after {
+section.opiniones article .opinion p:first-child::before, section.opiniones article .opinion p:last-child::after {
   content: '"';
   font-size: 2rem;
   font-family: var(--font-family-ipizza);
   margin: 0 0.5vw;
 }
-.opiniones article header {
+section.opiniones article header {
   font-weight: bold;
 }
-.opiniones article header h4::before {
+section.opiniones article header h4::before {
   content: "Escrito por: ";
   font-weight: normal;
 }
 
 @media only screen and (max-width: 991.98px) {
-  .menu-de-pizzas .maestro-pizzero {
+  section.menu-de-pizzas .maestro-pizzero {
     display: none;
   }
 }
 @media only screen and (min-width: 576px) and (max-width: 991.98px) {
-  .publicidad {
+  section.publicidad {
     height: calc(var(--altura-visible-mobile) * 0.75) !important;
   }
-  .publicidad video {
+  section.publicidad video {
     height: calc(var(--altura-visible-mobile) * 0.75);
   }
-  .publicidad .frase-publicitaria {
+  section.publicidad .frase-publicitaria {
     font-size: 2rem;
     position: absolute;
     top: 21vh;
     right: 1%;
   }
-  .publicidad .frase-publicitaria h2 {
+  section.publicidad .frase-publicitaria h2 {
     font-size: 1.2rem;
   }
 
-  .menu-de-pizzas {
+  section.menu-de-pizzas {
     padding: var(--padding-vertical) 0;
   }
 
-  .nuestra-calidad article,
-.nuestra-calidad article:hover {
+  section.nuestra-calidad article,
+section.nuestra-calidad article:hover {
     filter: unset;
   }
 
-  .opiniones {
+  section.opiniones {
     height: auto;
     padding: var(--padding-vertical) 0;
   }
 }
+@media only screen and (min-width: 576px) and (max-width: 991.98px) {
+  .no-webp section.nuestra-calidad::before {
+    background: url(../img/background/bg-nuestra-calidad-tablet.jpg) top/cover;
+  }
+  .webp section.nuestra-calidad::before {
+    background: url(../img/background/bg-nuestra-calidad-tablet.webp) top/cover;
+  }
+
+  .no-webp section.opiniones::before {
+    background: url(../img/background/bg-opiniones-tablet.jpg) center/cover;
+  }
+  .webp section.opiniones::before {
+    background: url(../img/background/bg-opiniones-tablet.webp) center/cover;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767.98px) {
+  .no-webp section.nuestra-calidad::before {
+    background: url(../img/background/bg-nuestra-calidad-mobile-xl.jpg) top/cover;
+  }
+  .webp section.nuestra-calidad::before {
+    background: url(../img/background/bg-nuestra-calidad-mobile-xl.webp) top/cover;
+  }
+
+  .no-webp section.opiniones::before {
+    background: url(../img/background/bg-opiniones-mobile-xl.jpg) center/cover;
+  }
+  .webp section.opiniones::before {
+    background: url(../img/background/bg-opiniones-mobile-xl.webp) center/cover;
+  }
+}
 @media only screen and (max-width: 575.98px) {
-  .publicidad {
+  section.publicidad {
+    /* Porque el height auto de .h-visible no calcula bien la altura */
     height: calc(var(--altura-visible-mobile) * 0.5) !important;
   }
-  .publicidad video {
+  section.publicidad video {
     height: calc(var(--altura-visible-mobile) * 0.5);
   }
-  .publicidad .frase-publicitaria {
+  section.publicidad .frase-publicitaria {
     font-size: 1.5rem;
     position: absolute;
     top: 15vh;
     right: 2%;
   }
-  .publicidad .frase-publicitaria h2 {
+  section.publicidad .frase-publicitaria h2 {
     font-size: 0.7rem;
   }
 
-  .menu-de-pizzas {
+  section.menu-de-pizzas {
     padding: var(--padding-vertical) 0;
   }
 
-  .nuestra-calidad article,
-.nuestra-calidad article:hover {
+  section.nuestra-calidad article,
+section.nuestra-calidad article:hover {
     filter: unset;
   }
+  .no-webp section.nuestra-calidad::before {
+    background: url(../img/background/bg-nuestra-calidad-mobile.jpg) top/cover;
+  }
+  .webp section.nuestra-calidad::before {
+    background: url(../img/background/bg-nuestra-calidad-mobile.webp) top/cover;
+  }
 
-  .nuestra-calidad figure figcaption {
+  section.nuestra-calidad figure figcaption {
     width: 100%;
     text-align: center;
   }
-  .nuestra-calidad figure figcaption p {
+  section.nuestra-calidad figure figcaption p {
     font-size: 0.8rem;
   }
 
-  .opiniones {
+  section.opiniones {
     padding: var(--padding-vertical) 0;
   }
+  .no-webp section.opiniones::before {
+    background: url(../img/background/bg-opiniones-mobile.jpg) center/cover;
+  }
+  .webp section.opiniones::before {
+    background: url(../img/background/bg-opiniones-mobile.webp) center/cover;
+  }
 
-  .opiniones article {
+  section.opiniones article {
     width: 75%;
   }
-  .opiniones article .opinion-estrellas i {
+  section.opiniones article .opinion-estrellas i {
     font-size: 1.5rem;
   }
-  .opiniones article .opinion {
+  section.opiniones article .opinion {
     text-align: center;
   }
-  .opiniones article header {
+  section.opiniones article header {
     text-align: center;
   }
 }
-.tarjeta-de-producto, .contacto form, .contacto iframe, .consulta-pedido .contenedor, .opiniones article {
+.tarjeta-de-producto, section.contacto form#contacto-form, section.contacto iframe, section.consulta-pedido .contenedor, section.opiniones article {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.55), 0 6px 20px 0 rgba(0, 0, 0, 0.54);
 }
 
-.tarjeta-de-producto:hover, .contacto form:hover, .contacto iframe:hover {
+.tarjeta-de-producto:hover, section.contacto form#contacto-form:hover, section.contacto iframe:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.55), 0 6px 20px 0 rgba(0, 0, 0, 0.54);
 }
 
@@ -557,15 +590,13 @@ nav#menu-mobile a:hover::before, nav#menu a:hover::before {
 }
 
 /* -------- pedidos.html -------- */
-.consulta-pedido i {
+section.consulta-pedido i {
   color: var(--color-gris);
   font-size: 1rem;
 }
-.consulta-pedido::before {
+section.consulta-pedido::before {
   content: "";
-  background-image: url(../img/background/bg-pedidos.jpg);
-  background-size: cover;
-  background-position: bottom;
+  background: url(../img/background/bg-pedidos.jpg) bottom/cover;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -573,43 +604,41 @@ nav#menu-mobile a:hover::before, nav#menu a:hover::before {
   right: 0;
   filter: brightness(0.7);
 }
-.webp .consulta-pedido::before {
-  background-image: url(../img/background/bg-pedidos.webp);
-  background-size: cover;
-  background-position: bottom;
+.webp section.consulta-pedido::before {
+  background: url(../img/background/bg-pedidos.webp) bottom/cover;
 }
 
-.consulta-pedido .contenedor {
+section.consulta-pedido .contenedor {
   background-color: #F8F9F180;
   border-radius: var(--borde-general);
   color: var(--color-gris);
   padding: var(--padding-vertical) 1.5rem;
   position: relative;
 }
-.consulta-pedido .contenedor form {
+section.consulta-pedido .contenedor form {
   width: 100%;
 }
-.consulta-pedido .contenedor h2 {
+section.consulta-pedido .contenedor h2 {
   font-size: 1rem;
 }
-.consulta-pedido .contenedor h2 i {
+section.consulta-pedido .contenedor h2 i {
   color: var(--color-tomate);
   text-align: center;
 }
 
-.faq {
+section.faq {
   background-color: var(--color-negro-intenso);
 }
-.faq h1 {
+section.faq h1 {
   color: var(--color-blanco);
   text-align: center;
   margin-bottom: 0.67rem;
 }
-.faq i {
+section.faq i {
   color: var(--color-queso);
   font-size: 1rem;
 }
-.faq .desplegable details p {
+section.faq .desplegable details p {
   background-color: var(--color-negro-intenso);
   border-left: 0.3rem solid var(--color-queso);
   font-size: 0.8rem;
@@ -617,7 +646,7 @@ nav#menu-mobile a:hover::before, nav#menu a:hover::before {
   padding: 1.2rem;
   padding-right: 0;
 }
-.faq .desplegable details summary {
+section.faq .desplegable details summary {
   background-color: var(--color-negro-intenso);
   border-left: 0.3rem solid var(--color-queso);
   color: var(--color-queso);
@@ -629,11 +658,11 @@ nav#menu-mobile a:hover::before, nav#menu a:hover::before {
   padding-right: 0;
   text-align: left;
 }
-.faq .desplegable details summary:hover {
+section.faq .desplegable details summary:hover {
   background-color: var(--color-queso);
   color: var(--color-negro-intenso);
 }
-.faq .desplegable details ul {
+section.faq .desplegable details ul {
   background-color: var(--color-negro-intenso);
   border-left: 0.3rem solid var(--color-queso);
   font-size: 0.8rem;
@@ -641,15 +670,37 @@ nav#menu-mobile a:hover::before, nav#menu a:hover::before {
   padding: 0 0 1.2rem 2.2rem;
 }
 
+@media only screen and (min-width: 576px) and (max-width: 991.98px) {
+  .no-webp section.consulta-pedido::before {
+    background: url(../img/background/bg-pedidos-tablet.jpg) bottom/cover;
+  }
+  .webp section.consulta-pedido::before {
+    background: url(../img/background/bg-pedidos-tablet.webp) bottom/cover;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767.98px) {
+  .no-webp section.consulta-pedido::before {
+    background: url(../img/background/bg-pedidos-mobile-xl.jpg) bottom/cover;
+  }
+  .webp section.consulta-pedido::before {
+    background: url(../img/background/bg-pedidos-mobile-xl.webp) bottom/cover;
+  }
+}
+@media only screen and (max-width: 575.98px) {
+  .no-webp section.consulta-pedido::before {
+    background: url(../img/background/bg-pedidos-mobile.jpg) bottom/cover;
+  }
+  .webp section.consulta-pedido::before {
+    background: url(../img/background/bg-pedidos-mobile.webp) bottom/cover;
+  }
+}
 /* -------- nosotros.html -------- */
-.historia article {
+section.historia article {
   padding: var(--padding-vertical) var(--padding-horizontal);
 }
-.historia::before {
+section.historia::before {
   content: "";
-  background-image: url(../img/background/bg-nosotros.jpg);
-  background-size: cover;
-  background-position: center;
+  background: url(../img/background/bg-nosotros.jpg) center/cover;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -657,71 +708,93 @@ nav#menu-mobile a:hover::before, nav#menu a:hover::before {
   right: 0;
   filter: brightness(0.4);
 }
-.webp .historia::before {
-  background-image: url(../img/background/bg-nosotros.webp);
-  background-size: cover;
-  background-position: center;
+.webp section.historia::before {
+  background: url(../img/background/bg-nosotros.webp) center/cover;
 }
 
-.historia figure {
+section.historia figure {
   margin: 0;
   position: relative;
 }
-.historia figure img {
+section.historia figure img {
   border: 0.5rem outset var(--color-gris);
   transform: rotate(-5deg);
   width: 100%;
 }
-.historia figure figcaption {
+section.historia figure figcaption {
   width: 100%;
 }
-.historia figure figcaption h1 {
+section.historia figure figcaption h1 {
   color: var(--color-queso);
 }
-.historia figure figcaption p {
+section.historia figure figcaption p {
   text-align: justify;
 }
 
-.galeria {
+section.galeria {
   background: linear-gradient(to bottom, #000000, #434343);
   padding: 0;
 }
-.galeria img {
+section.galeria img {
   height: 44vh;
   width: 100%;
 }
 
 @media only screen and (max-width: 991.98px) {
-  .historia,
-.historia figure {
+  section.historia {
+    height: auto;
+  }
+  section.historia article {
+    padding: 0;
+  }
+
+  section.historia figure {
     height: auto;
   }
 
-  .historia article {
-    padding: 0;
-  }
-
-  .galeria img {
+  section.galeria img {
     height: 30vh;
   }
 }
+@media only screen and (min-width: 576px) and (max-width: 991.98px) {
+  .no-webp section.historia::before {
+    background: url(../img/background/bg-nosotros-tablet.jpg) center/cover;
+  }
+  .webp section.historia::before {
+    background: url(../img/background/bg-nosotros-tablet.webp) center/cover;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767.98px) {
+  .no-webp section.historia::before {
+    background: url(../img/background/bg-nosotros-mobile-xl.jpg) center/cover;
+  }
+  .webp section.historia::before {
+    background: url(../img/background/bg-nosotros-mobile-xl.webp) center/cover;
+  }
+}
 @media only screen and (max-width: 575.98px) {
-  .historia article {
+  section.historia article {
     padding: 0;
   }
+  .no-webp section.historia::before {
+    background: url(../img/background/bg-nosotros-mobile.jpg) center/cover;
+  }
+  .webp section.historia::before {
+    background: url(../img/background/bg-nosotros-mobile.webp) center/cover;
+  }
 
-  .historia figure img {
+  section.historia figure img {
     width: 90%;
   }
-  .historia figure figcaption {
+  section.historia figure figcaption {
     margin-top: 2rem;
   }
 }
-.tarjeta-de-producto, .contacto form, .contacto iframe, .opiniones article, .consulta-pedido .contenedor {
+.tarjeta-de-producto, section.contacto form#contacto-form, section.contacto iframe, section.opiniones article, section.consulta-pedido .contenedor {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.55), 0 6px 20px 0 rgba(0, 0, 0, 0.54);
 }
 
-.tarjeta-de-producto:hover, .contacto form:hover, .contacto iframe:hover {
+.tarjeta-de-producto:hover, section.contacto form#contacto-form:hover, section.contacto iframe:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.55), 0 6px 20px 0 rgba(0, 0, 0, 0.54);
 }
 
@@ -754,75 +827,74 @@ nav#menu-mobile a:hover::before, nav#menu a:hover::before {
 }
 
 /* -------- contacto.html -------- */
-.contacto {
+section.contacto {
   background: linear-gradient(to bottom, var(--color-queso), var(--color-gris));
 }
 
-.contacto iframe {
+section.contacto iframe {
   border: 0;
   transition: 1s;
   width: 90%;
 }
-.contacto iframe:hover {
+section.contacto iframe:hover {
   transition: 1s;
 }
 
-.contacto form {
+section.contacto form#contacto-form {
   background-color: var(--color-gris);
   border-radius: 25px;
   padding: 1rem;
   transition: 1s;
   width: 90%;
 }
-.contacto form h1 {
-  display: inline-block;
+section.contacto form#contacto-form h1 {
   color: inherit;
+  display: inline-block;
   font-size: inherit;
   font-family: inherit;
   font-weight: inherit;
   margin-bottom: inherit;
 }
-.contacto form .campo-obligatorio::after {
+section.contacto form#contacto-form .campo-obligatorio::after {
   content: "*";
   color: var(--color-queso);
   margin-left: 0.3rem;
 }
-.contacto form:hover {
+section.contacto form#contacto-form:hover {
   transition: 1s;
 }
 
 @media only screen and (max-width: 991.98px) {
-  .contacto form {
-    width: 100%;
+  section.contacto form#contacto-form {
+    width: 95%;
   }
 }
 /* -------- armala.html --------*/
-.armala h1 {
+section.armala h1 {
   color: var(--color-blanco);
   text-align: center;
 }
-.armala h2 {
+section.armala h2 {
   font-family: "Finger Paint", cursive;
   font-size: 1.5rem;
 }
-.armala::before {
-  background-image: url(../img/background/bg-armala.svg);
-  background-size: contain;
+section.armala::before {
   content: "";
-  filter: brightness(0.3);
+  background: url(../img/background/bg-armala.svg) center/cover;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  filter: brightness(0.3);
 }
 
-.armado-de-pedido,
-.detalle-de-pedido {
+section.armado-de-pedido,
+section.detalle-de-pedido {
   padding: 1rem;
 }
 
-.armado-de-pedido {
+section.armado-de-pedido {
   border-radius: var(--borde-general);
   background-color: var(--color-gris);
 }
@@ -852,21 +924,21 @@ nav#menu-mobile a:hover::before, nav#menu a:hover::before {
   margin: 0 0.1rem;
 }
 
-form#armala-form h2 {
+section.armado-de-pedido form#armala-form h2 {
   color: var(--color-queso);
 }
-form#armala-form fieldset {
+section.armado-de-pedido form#armala-form fieldset {
   margin-top: 2rem;
 }
-form#armala-form fieldset.extras {
+section.armado-de-pedido form#armala-form fieldset.extras {
   border: 1px solid var(--color-blanco);
   padding: 1.2rem 1rem;
 }
-form#armala-form > div {
+section.armado-de-pedido form#armala-form > div {
   margin-top: 1rem;
 }
 
-.detalle-de-pedido {
+section.detalle-de-pedido {
   background-color: var(--color-queso);
   border-radius: var(--borde-general);
   color: var(--color-gris);
@@ -875,27 +947,27 @@ form#armala-form > div {
   position: sticky;
   top: calc(var(--padding-vertical) / 4 + var(--altura-menu-fijo));
 }
-.detalle-de-pedido section {
+section.detalle-de-pedido section {
   padding: 0;
 }
-.detalle-de-pedido ul {
+section.detalle-de-pedido ul {
   margin: 0;
   padding: 0.5rem 0;
   list-style-type: none;
 }
-.detalle-de-pedido ul li {
+section.detalle-de-pedido ul li {
   font-style: italic;
 }
-.detalle-de-pedido .detalle-extras,
-.detalle-de-pedido .detalle-cono,
-.detalle-de-pedido .detalle-envio {
+section.detalle-de-pedido .detalle-extras,
+section.detalle-de-pedido .detalle-cono,
+section.detalle-de-pedido .detalle-envio {
   border-top: 2px solid var(--color-gris);
 }
-.detalle-de-pedido .precio::before {
+section.detalle-de-pedido .precio::before {
   content: "$";
   margin-right: 1px;
 }
-.detalle-de-pedido .precio-total {
+section.detalle-de-pedido .precio-total {
   color: var(--color-blanco);
   font-family: "Finger Paint", cursive;
   font-size: 2rem;
@@ -904,7 +976,7 @@ form#armala-form > div {
 }
 
 @media only screen and (max-width: 575.98px) {
-  .armala {
+  section.armala {
     padding: var(--padding-vertical) 0;
   }
 }
@@ -1057,11 +1129,11 @@ footer .otros-links.d-flex {
   row-gap: 0.6rem;
 }
 
-.tarjeta-de-producto, .opiniones article, .consulta-pedido .contenedor, .contacto iframe, .contacto form {
+.tarjeta-de-producto, section.opiniones article, section.consulta-pedido .contenedor, section.contacto iframe, section.contacto form#contacto-form {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.55), 0 6px 20px 0 rgba(0, 0, 0, 0.54);
 }
 
-.tarjeta-de-producto:hover, .contacto iframe:hover, .contacto form:hover {
+.tarjeta-de-producto:hover, section.contacto iframe:hover, section.contacto form#contacto-form:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.55), 0 6px 20px 0 rgba(0, 0, 0, 0.54);
 }
 
@@ -1098,11 +1170,11 @@ nav#menu-mobile a:hover::before, nav#menu a:hover::before {
     display: none;
   }
 }
-.tarjeta-de-producto, .opiniones article, .consulta-pedido .contenedor, .contacto iframe, .contacto form {
+.tarjeta-de-producto, section.opiniones article, section.consulta-pedido .contenedor, section.contacto iframe, section.contacto form#contacto-form {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.55), 0 6px 20px 0 rgba(0, 0, 0, 0.54);
 }
 
-.tarjeta-de-producto:hover, .contacto iframe:hover, .contacto form:hover {
+.tarjeta-de-producto:hover, section.contacto iframe:hover, section.contacto form#contacto-form:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.55), 0 6px 20px 0 rgba(0, 0, 0, 0.54);
 }
 
@@ -1161,11 +1233,11 @@ section.menu-mobile small {
   font-size: 0.8rem;
 }
 
-.tarjeta-de-producto, .opiniones article, .consulta-pedido .contenedor, .contacto iframe, .contacto form {
+.tarjeta-de-producto, section.opiniones article, section.consulta-pedido .contenedor, section.contacto iframe, section.contacto form#contacto-form {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.55), 0 6px 20px 0 rgba(0, 0, 0, 0.54);
 }
 
-.tarjeta-de-producto:hover, .contacto iframe:hover, .contacto form:hover {
+.tarjeta-de-producto:hover, section.contacto iframe:hover, section.contacto form#contacto-form:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.55), 0 6px 20px 0 rgba(0, 0, 0, 0.54);
 }
 

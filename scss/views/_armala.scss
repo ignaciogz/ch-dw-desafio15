@@ -1,7 +1,8 @@
 @import '../base/media-query';
+@import '../base/mixins';
 
 /* -------- armala.html --------*/
-.armala {
+section.armala {
     h1 {
         color: var(--color-blanco);
         text-align: center;
@@ -12,24 +13,17 @@
     }
 
     &::before {
-        background-image: url(../img/background/bg-armala.svg);
-        background-size: contain;
-        content:'';
+        @include background-full(url(../img/background/bg-armala.svg));
         filter: brightness(0.3);
-        position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
     }
 }
 
-.armado-de-pedido,
-.detalle-de-pedido {
+section.armado-de-pedido,
+section.detalle-de-pedido {
     padding: 1rem;
 }
 
-.armado-de-pedido {
+section.armado-de-pedido {
     border-radius: var(--borde-general);
     background-color: var(--color-gris);
 }
@@ -64,7 +58,7 @@
     }
 }
 
-form#armala-form {
+section.armado-de-pedido form#armala-form {
     h2 {
         color: var(--color-queso);
     }
@@ -83,7 +77,7 @@ form#armala-form {
     }
 }
 
-.detalle-de-pedido {
+section.detalle-de-pedido {
     background-color: var(--color-queso);
     border-radius: var(--borde-general);
     color: var(--color-gris);
@@ -127,7 +121,7 @@ form#armala-form {
 }
 
 @include mediaq-breakpoint {
-    .armala {
+    section.armala {
         padding: var(--padding-vertical) 0;
     }
 }

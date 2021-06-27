@@ -3,11 +3,11 @@
 @import '../base/media-query';
 
 /* -------- contacto.html -------- */
-.contacto {
+section.contacto {
     background: map-get($gradientes, g-ipizza);
 }
 
-.contacto iframe {
+section.contacto iframe {
     @extend %sombra-contenedor;
     border: 0;
     transition: 1s;
@@ -19,7 +19,7 @@
     }
 }
 
-.contacto form {
+section.contacto form#contacto-form {
     @extend %sombra-contenedor;
     background-color: var(--color-gris);
     border-radius: 25px;
@@ -28,8 +28,8 @@
     width: 90%;
 
     h1 {
-        display: inline-block;
         color: inherit;
+        display: inline-block;
         font-size: inherit;
         font-family: inherit;
         font-weight: inherit;
@@ -49,7 +49,7 @@
 }
 
 @include mediaq-breakpoint-max(md) {
-    .contacto form {
-        width: 100%;
+    section.contacto form#contacto-form {
+        width: 95%;
     }
 }

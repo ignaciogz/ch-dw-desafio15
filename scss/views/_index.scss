@@ -4,7 +4,7 @@
 @import '../base/mixins';
 
 /* -------- index.html -------- */
-.publicidad {
+section.publicidad {
     padding: 0;
 
     video {
@@ -28,7 +28,7 @@
     }
 }
 
-.menu-de-pizzas {
+section.menu-de-pizzas {
     background: map-get($gradientes, UIg-Zinc);
 
     .maestro-pizzero {
@@ -41,7 +41,7 @@
     }
 } 
 
-.nuestra-calidad {
+section.nuestra-calidad {
     padding: var(--padding-vertical) 0;
 
     article {
@@ -70,7 +70,7 @@
     }
 }
 
-.nuestra-calidad figure {
+section.nuestra-calidad figure {
     img {
         border-radius: var(--borde-general);
         height: 100%;
@@ -87,18 +87,18 @@
     }
 }
 
-.opiniones {
+section.opiniones {
     @include background(url(../img/background/bg-opiniones.jpg));
     background-attachment: fixed;
     background-repeat: no-repeat;
     height: 440px;
 
     .webp &::before {
-        @include background(url(../img/background/bg-nuestra-calidad.webp));
+        @include background(url(../img/background/bg-opiniones.webp));
     }
 }
 
-.opiniones article {
+section.opiniones article {
     @extend %sombra-contenedor;
     background-color: #F8F9F1E6;
     border-radius: var(--borde-general);
@@ -147,7 +147,7 @@
 }
 
 @include mediaq-breakpoint-max(md) {
-    .menu-de-pizzas {    
+    section.menu-de-pizzas {    
         .maestro-pizzero {
             display: none;
         }
@@ -155,7 +155,7 @@
 }
 
 @include mediaq-breakpoint-between(sm, lg) {
-    .publicidad {
+    section.publicidad {
         height: calc(var(--altura-visible-mobile) * 0.75) !important; // Porque el height auto de .h-visible no calcula bien la altura
 
         video {
@@ -174,24 +174,71 @@
         }
     }
 
-    .menu-de-pizzas {
+    section.menu-de-pizzas {
         padding: var(--padding-vertical) 0;
     }
 
-    .nuestra-calidad article,
-    .nuestra-calidad article:hover {
-        filter: unset;
+    section.nuestra-calidad {
+        article,
+        article:hover {
+            filter: unset;
+         }
     }
-
-    .opiniones {
+    
+    section.opiniones {
         height: auto;
         padding: var(--padding-vertical) 0;
     }
 }
 
+@include mediaq-breakpoint(md) {
+    section.nuestra-calidad {
+        .no-webp &::before {
+            @include background(url(../img/background/bg-nuestra-calidad-tablet.jpg), top);
+        }
+    
+        .webp &::before {
+            @include background(url(../img/background/bg-nuestra-calidad-tablet.webp), top);
+        }
+    }
+
+    section.opiniones {
+        .no-webp &::before {
+            @include background(url(../img/background/bg-opiniones-tablet.jpg));
+        }
+    
+        .webp &::before {
+            @include background(url(../img/background/bg-opiniones-tablet.webp));
+        }
+    }
+}
+
+@include mediaq-breakpoint(sm) {
+    section.nuestra-calidad {
+        .no-webp &::before {
+            @include background(url(../img/background/bg-nuestra-calidad-mobile-xl.jpg), top);
+        }
+    
+        .webp &::before {
+            @include background(url(../img/background/bg-nuestra-calidad-mobile-xl.webp), top);
+        }
+    }
+
+    section.opiniones {
+        .no-webp &::before {
+            @include background(url(../img/background/bg-opiniones-mobile-xl.jpg));
+        }
+    
+        .webp &::before {
+            @include background(url(../img/background/bg-opiniones-mobile-xl.webp));
+        }
+    }
+}
+
 @include mediaq-breakpoint {
-    .publicidad {
-        height: calc(var(--altura-visible-mobile) * 0.5) !important; // Porque el height auto de .h-visible no calcula bien la altura
+    section.publicidad {
+        /* Porque el height auto de .h-visible no calcula bien la altura */
+        height: calc(var(--altura-visible-mobile) * 0.5) !important;
 
         video {
             height: calc(var(--altura-visible-mobile) * 0.5);
@@ -209,16 +256,26 @@
         }
     }
     
-    .menu-de-pizzas {
+    section.menu-de-pizzas {
         padding: var(--padding-vertical) 0;
     }
 
-    .nuestra-calidad article,
-    .nuestra-calidad article:hover {
-        filter: unset;
-    }
+    section.nuestra-calidad {
+        article,
+        article:hover {
+            filter: unset;
+        }
 
-    .nuestra-calidad figure {
+        .no-webp &::before {
+            @include background(url(../img/background/bg-nuestra-calidad-mobile.jpg), top);
+        }
+
+        .webp &::before {
+            @include background(url(../img/background/bg-nuestra-calidad-mobile.webp), top);
+        }
+    }
+    
+    section.nuestra-calidad figure {
         figcaption {
             width: 100%;
             text-align: center;
@@ -229,11 +286,19 @@
         }
     }
     
-    .opiniones {
+    section.opiniones {
         padding: var(--padding-vertical) 0;
+
+        .no-webp &::before {
+            @include background(url(../img/background/bg-opiniones-mobile.jpg));
+        }
+
+        .webp &::before {
+            @include background(url(../img/background/bg-opiniones-mobile.webp));
+        }
     }
 
-    .opiniones article {
+    section.opiniones article {
         width: 75%;
 
         .opinion-estrellas {

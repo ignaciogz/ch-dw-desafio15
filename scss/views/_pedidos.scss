@@ -1,8 +1,9 @@
 @import '../base/extends';
+@import '../base/media-query';
 @import '../base/mixins';
 
 /* -------- pedidos.html -------- */
-.consulta-pedido {
+section.consulta-pedido {
     i {
         color: var(--color-gris);
         font-size: 1rem;
@@ -18,7 +19,7 @@
     }
 }
 
-.consulta-pedido .contenedor {
+section.consulta-pedido .contenedor {
     @extend %sombra-contenedor;
     background-color: #F8F9F180;
     border-radius: var(--borde-general);
@@ -38,7 +39,7 @@
     }
 }
 
-.faq {
+section.faq {
     background-color: var(--color-negro-intenso);
     
     h1 {
@@ -86,3 +87,38 @@
     }
 }
 
+@include mediaq-breakpoint(md) {
+    section.consulta-pedido {
+        .no-webp &::before {
+            @include background(url(../img/background/bg-pedidos-tablet.jpg), bottom);
+        }
+    
+        .webp &::before {
+            @include background(url(../img/background/bg-pedidos-tablet.webp), bottom);
+        }  
+    }
+}
+
+@include mediaq-breakpoint(sm) {
+    section.consulta-pedido {
+        .no-webp &::before {
+            @include background(url(../img/background/bg-pedidos-mobile-xl.jpg), bottom);
+        }
+    
+        .webp &::before {
+            @include background(url(../img/background/bg-pedidos-mobile-xl.webp), bottom);
+        }  
+    }
+}
+
+@include mediaq-breakpoint {
+    section.consulta-pedido {
+        .no-webp &::before {
+            @include background(url(../img/background/bg-pedidos-mobile.jpg), bottom);
+        }
+    
+        .webp &::before {
+            @include background(url(../img/background/bg-pedidos-mobile.webp), bottom);
+        }  
+    }
+}

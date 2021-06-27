@@ -1,8 +1,6 @@
 @mixin background-full($url, $posicion: center, $tamano: cover) {
     content:'';
-    background-image: $url;
-    background-size: $tamano;
-    background-position: $posicion;
+    background: $url $posicion / $tamano;
     position: absolute;
         top: 0;
         bottom: 0;
@@ -11,9 +9,7 @@
 }
 
 @mixin background($url, $posicion: center, $tamano: cover) {
-    background-image: $url;
-    background-size: $tamano;
-    background-position: $posicion;
+    background: $url $posicion / $tamano;
 }
 
 @mixin prefix($propiedad, $valor) {
