@@ -1,5 +1,6 @@
 window.addEventListener("load", init);
 
+/* -------- INICIO Funciones de animaciones -------- */
 const tipearMensaje = (function () {
     let i = 0;
     let txt = 'Estamos preparando tu iPizza con mucho ';
@@ -22,7 +23,9 @@ function shakeInicial(el) {
 function removeShake() {
     this.classList.remove("shake-on-load");
 }
+/* -------- FIN Funciones de animaciones -------- */
 
+/* -------- INICIO Funciones de la galeria de imagenes -------- */
 function cargarFilaDeImagenes() {
     let imagenesSinMostrar = document.querySelectorAll(".galeria .d-none");
     imagenesSinMostrar[0].classList.remove("d-none");
@@ -31,6 +34,23 @@ function cargarFilaDeImagenes() {
     if(imagenesSinMostrar.length == 1) {
         this.classList.add("d-none");
     }
+}
+/* -------- FIN Funciones de la galeria de imagenes -------- */
+
+const listaDePrecios = {
+    precioPorcion: {
+        'muzzarella': 30, 
+        'jamon': 42,
+        'napolitana': 45,
+        'calabresa': 50
+    },
+    "oregano": 11,
+    "aceitunas": 12,
+    "doble-queso": 13,
+    "cheddar": 14,
+    "papas": 20,
+    "retiro-en-local": 0,
+    "envio-a-domicilio": 100
 }
 
 function init() {
@@ -57,33 +77,7 @@ function init() {
         $btnMostrarMasFotos.addEventListener("click", cargarFilaDeImagenes);
     }
 
-    /*  PRUEBA DE COSAS EN JS:
-    const videoPublicitario = document.querySelector('video');
-
-    function escucharVideo() {
-        let segundosReproducidos = Math.floor(this.currentTime);
-        console.log(segundosReproducidos);
-    }
-
-    videoPublicitario.addEventListener('timeupdate', escucharVideo); 
-    */
-
-    const listaDePrecios = {
-        precioPorcion: {
-            'muzzarella': 30, 
-            'jamon': 42,
-            'napolitana': 45,
-            'calabresa': 50
-        },
-        "oregano": 11,
-        "aceitunas": 12,
-        "doble-queso": 13,
-        "cheddar": 14,
-        "papas": 20,
-        "retiro-en-local": 0,
-        "envio-a-domicilio": 100
-    }
-
+    /* Logica de desplegables en armala.html */
     const $desplegables = document.querySelectorAll('.gustos select');
     let cantDesplegables;
 
@@ -104,7 +98,7 @@ function init() {
         const nombreGustoPatron = nombreGusto + "Patron";
         const mostrar = nombreGusto != "Default" ? true : false;
 
-        const IDSelect = parseInt(event.target.getAttribute('data-ipizza-gusto-num'));
+        const IDSelect = parseInt(event.target.getAttribute('data-ipizza-gusto-num'))  - 1;
 
         const $tarjetaSeleccionada = document.querySelector('.active .tarjeta-de-producto');
         const cantidadGustos = parseInt($tarjetaSeleccionada.getAttribute('data-ipizza-cant-gustos'));
@@ -137,7 +131,8 @@ function init() {
         let liNuevo = crearElementoDeLista(cantidadPorciones, nombreGusto, precioFinalGusto);
         $elementosDetallePorciones[IDSelect].replaceWith(liNuevo);
 
-        precioTotal();
+        const costoTotal = calcularCostoTotal();
+        mostrarCostoTotal(costoTotal);
     }
     
     /* Controlo elemento visible en el carousel */
@@ -171,7 +166,8 @@ function init() {
             }
             
             canvasPizza.limpiarCanvas();
-            precioTotal();
+            const costoTotal = calcularCostoTotal();
+            mostrarCostoTotal(costoTotal);
         });
     }
 
@@ -213,21 +209,25 @@ function init() {
     }
 
     /* Actualizar Precio Total */
-    function precioTotal() {
+    function calcularCostoTotal() {
         const $precios = document.querySelectorAll('li:not(.d-none) div.precio');
         const cantPrecios = $precios.length;
-        const $precioTotal = document.querySelector('div.precio-total');
-        let precioTotal = 0;
+        let costoTotal = 0;
 
         for (let i = 0; i < cantPrecios; i++) {
-            precioTotal = precioTotal + parseInt($precios[i].textContent);
+            costoTotal += parseInt($precios[i].textContent);
         }
 
-        $precioTotal.textContent = precioTotal;
-        if (isNaN(precioTotal)) {
+        return costoTotal;
+    }
+
+    function mostrarCostoTotal(costoTotal) {
+        const $precioTotal = document.querySelector('div.precio-total');
+
+        if (isNaN(costoTotal)) {
             $precioTotal.textContent = "0";
         } else {
-            $precioTotal.textContent = precioTotal;
+            $precioTotal.textContent = costoTotal;
         }
     }
 
@@ -247,7 +247,8 @@ function init() {
             $divPrecio.parentNode.classList.toggle('d-none');
             $divPrecio.replaceWith(divPrecio);
     
-            precioTotal();
+            const costoTotal = calcularCostoTotal();
+            mostrarCostoTotal(costoTotal);
         })    
     }
 
@@ -302,7 +303,8 @@ function init() {
         $divsPrecio[IDli].parentNode.classList.toggle('d-none');
         $divsPrecio[IDli].replaceWith(divPrecio);
 
-        precioTotal();
+        const costoTotal = calcularCostoTotal();
+        mostrarCostoTotal(costoTotal);
     }
 
 
@@ -323,7 +325,7 @@ function init() {
         const $divPrecio = document.querySelector('.detalle-envio .precio');
         $divPrecio.replaceWith(divPrecio);
 
-        precioTotal();   
+        const costoTotal = calcularCostoTotal();
+        mostrarCostoTotal(costoTotal);   
     }
-    
 }
