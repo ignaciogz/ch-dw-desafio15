@@ -9,7 +9,7 @@
     }
 
     &::before {
-        @include background-full(url(../img/bg-pedidos.jpg), top);
+        @include background-full(url(../img/background/bg-pedidos.jpg), bottom);
         filter: brightness(0.7);
     }
 }

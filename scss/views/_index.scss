@@ -32,7 +32,7 @@
     background: map-get($gradientes, UIg-Zinc);
 
     .maestro-pizzero {
-        background-image: url(../img/pizza-maker.svg);
+        background-image: url(../img/background/bg-maestro-pizzero.svg);
         background-position: -39% 75%;
         background-repeat: no-repeat;
         background-size: 50% 110%;
@@ -68,7 +68,7 @@
     }
 
     &::before  {
-        @include background-full(url(../img/bg-nuestra-calidad.jpg), top);
+        @include background-full(url(../img/background/bg-nuestra-calidad.jpg), top);
         filter: grayscale(1);
     }
 }
@@ -92,7 +92,7 @@
 
 .opiniones {
     background-attachment: fixed;
-    background-image: url(../img/bg-opiniones.jpg);
+    background-image: url(../img/background/bg-opiniones.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -184,13 +184,6 @@
         filter: unset;
     }
 
-    .nuestra-calidad figure {
-        img {
-            height: 100%;
-            width: 90%;
-        }
-    }
-
     .opiniones {
         height: auto;
         padding: var(--padding-vertical) 0;
@@ -227,10 +220,6 @@
     }
 
     .nuestra-calidad figure {
-        img {
-            height: 100%;
-            width: 90%;
-        }
         figcaption {
             width: 100%;
             text-align: center;

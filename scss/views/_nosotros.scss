@@ -8,10 +8,10 @@
     }
 
     &::before {
-        @include background-full(url(../img/bg-nosotros.jpg));
+        @include background-full(url(../img/background/bg-nosotros.jpg));
         filter: brightness(0.4);
     }
-}   
+}
 
 .historia figure {
     margin: 0;
