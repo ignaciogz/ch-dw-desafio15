@@ -71,6 +71,7 @@ function init() {
             break;
     }
 
+
     /* Carga de imagenes ocultas en nosotros.html */
     const $btnMostrarMasFotos = document.getElementById('btn-mostrar-mas-fotos');
     if ($btnMostrarMasFotos !== null) {
@@ -85,9 +86,9 @@ function init() {
         cantDesplegables = $desplegables.length;
 
         /* Cada Select */
-        $desplegables.forEach(asociarEventos);
+        $desplegables.forEach(asociarEventosADesplegables);
 
-        function asociarEventos(desplegable) {
+        function asociarEventosADesplegables(desplegable) {
             desplegable.addEventListener('change', calcularCostos);
             desplegable.addEventListener('change', mostrarPorciones);
         }
@@ -136,7 +137,7 @@ function init() {
         $carouselProductos.addEventListener('slid.bs.carousel', actualizarPaginaArmala);
     }
 
-    function actualizarPaginaArmala() {
+    function actualizarPaginaArmala() { // LISTO
         const iPizzaSeleccionada = obtenerInfoDeiPizzaSeleccionada();
         
         let $detallePorciones = obtenerDetallePorciones();
@@ -202,6 +203,38 @@ function init() {
     function mostrarDetallePorciones($detallePorciones, posicion, elementoNuevo) { //LISTO
         $detallePorciones[posicion].replaceWith(elementoNuevo);
     }
+
+    function obtenerDivPrecio(identificador) { //LISTO
+        return document.querySelector(identificador);
+    }
+
+    function obtenerDivsPrecio(identificador) { //LISTO
+        return document.querySelectorAll(identificador);
+    }
+
+    function verificarChecked(identificador) { //LISTO
+        const $checkboxs = document.querySelectorAll(identificador);
+        let algunoChecked = false;
+
+        $checkboxs.forEach(function(inputCheck) {
+            if (inputCheck.checked) {
+                algunoChecked = true;
+            }
+        });
+
+        return algunoChecked;
+    }
+
+    const UBICACION_EN_DETALLE_EXTRAS = [
+        'oregano',
+        'aceitunas',
+        'doble-queso',
+        'cheddar'
+    ]
+
+    function obtenerUbicacionDetalleExtras(IDCheckbox) { //LISTO
+        return UBICACION_EN_DETALLE_EXTRAS.indexOf(IDCheckbox);
+    }
     
     /* INICIO Creacion de Elemento de Lista */
     function crearElementoDeLista(cantPorciones, gusto, precio, visible = true) { //LISTO
@@ -251,24 +284,27 @@ function init() {
     }
     /* FIN Costo total */
 
+
     /* Checkbox cono de papas! */
     const $checkboxPapas = document.getElementById('papas')
 
     if ($checkboxPapas !== null) {
-        $checkboxPapas.addEventListener('change', (event) => {
-            const precio = listaDePrecios['papas'];
-            const $seccionDetalleCono = document.querySelector('.detalle-cono');
-            $seccionDetalleCono.classList.toggle('d-none');
-            
-            const divPrecio = crearDivPrecio(precio);
-    
-            const $divPrecio = document.querySelector('.detalle-cono .precio');
-            $divPrecio.parentNode.classList.toggle('d-none');
-            $divPrecio.replaceWith(divPrecio);
-    
-            const costoTotal = calcularCostoTotal();
-            mostrarCostoTotal(costoTotal);
-        })    
+        $checkboxPapas.addEventListener('change', actualizarDetalleCono);
+    }
+
+    function actualizarDetalleCono() { // Listo
+        const $seccionDetalleCono = document.querySelector('.detalle-cono');
+        $seccionDetalleCono.classList.toggle('d-none');
+        const precio = listaDePrecios['papas'];
+        
+        const divPrecio = crearDivPrecio(precio);
+
+        const $divPrecio = obtenerDivPrecio('.detalle-cono .precio');
+        $divPrecio.parentNode.classList.toggle('d-none');
+        $divPrecio.replaceWith(divPrecio);
+
+        const costoTotal = calcularCostoTotal();
+        mostrarCostoTotal(costoTotal);
     }
 
    
@@ -277,38 +313,17 @@ function init() {
 
     if ($extraCheck !== null) {
         $extraCheck.forEach(function(inputCheck){
-            inputCheck.addEventListener('change', extrasCB);
+            inputCheck.addEventListener('change', actualizarDetalleExtras);
         });
     }
     
-    function extrasCB(el) {
-        let IDli;
+    function actualizarDetalleExtras(event) { // Listo
         const $seccionDetalleExtras = document.querySelector('.detalle-extras');
-        const CheckID = el.target.id;
-        
-        switch (CheckID) {
-            case 'oregano':
-                IDli = 0;
-                break;
-            case 'aceitunas':
-                IDli = 1;
-                break;
-            case 'doble-queso':
-                IDli = 2;
-                break;
-            case'cheddar':
-                IDli = 3;
-                break;
-        }
-        
-        const precio = listaDePrecios[CheckID];
-        
-        let algunoChecked = false;
-        $extraCheck.forEach(function(inputCheck){
-            if (inputCheck.checked) {
-                algunoChecked = true;
-            }
-        });
+        const IDCheckbox = event.target.id;
+        const precio = listaDePrecios[IDCheckbox];
+
+        const ubicacion = obtenerUbicacionDetalleExtras(IDCheckbox);
+        const algunoChecked = verificarChecked('.extras input[type=checkbox]');
         
         if (algunoChecked) {
             $seccionDetalleExtras.classList.remove('d-none');
@@ -317,10 +332,10 @@ function init() {
         }
         
         const divPrecio = crearDivPrecio(precio);
-        const $divsPrecio = document.querySelectorAll('.detalle-extras .precio');
 
-        $divsPrecio[IDli].parentNode.classList.toggle('d-none');
-        $divsPrecio[IDli].replaceWith(divPrecio);
+        const $divsPrecio = obtenerDivsPrecio('.detalle-extras .precio');
+        $divsPrecio[ubicacion].parentNode.classList.toggle('d-none');
+        $divsPrecio[ubicacion].replaceWith(divPrecio);
 
         const costoTotal = calcularCostoTotal();
         mostrarCostoTotal(costoTotal);
@@ -332,16 +347,17 @@ function init() {
     const $radioEnLocal = document.getElementById('retiro-en-local');
 
     if ($radioEnvio !== null && $radioEnLocal !== null) {
-        $radioEnvio.addEventListener('change', radioCB);
-        $radioEnLocal.addEventListener('change', radioCB);
+        $radioEnvio.addEventListener('change', actualizarDetalleEnvio);
+        $radioEnLocal.addEventListener('change', actualizarDetalleEnvio);
     }
 
-    function radioCB(el) {
-        const precio = listaDePrecios[el.target.id];
+    function actualizarDetalleEnvio(event) { // Listo
+        const IDRadio = event.target.id;
+        const precio = listaDePrecios[IDRadio];
         
         const divPrecio = crearDivPrecio(precio);
 
-        const $divPrecio = document.querySelector('.detalle-envio .precio');
+        const $divPrecio = obtenerDivPrecio('.detalle-envio .precio');
         $divPrecio.replaceWith(divPrecio);
 
         const costoTotal = calcularCostoTotal();
