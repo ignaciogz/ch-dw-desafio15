@@ -93,86 +93,81 @@ function init() {
         }
     }
     
-    function mostrarPorciones(event) {
+    function mostrarPorciones(event) { // LISTO
         const nombreGusto = event.target.value;
         const nombreGustoPatron = nombreGusto + "Patron";
-        const mostrar = nombreGusto != "Default" ? true : false;
+        const mostrar = (nombreGusto != "Default") ? true : false;
 
-        const IDSelect = parseInt(event.target.getAttribute('data-ipizza-gusto-num'))  - 1;
+        const IDSelect = obtenerIDdelDesplegable(event);
+        const iPizzaSeleccionada = obtenerInfoDeiPizzaSeleccionada();
 
-        const $tarjetaSeleccionada = document.querySelector('.active .tarjeta-de-producto');
-        const cantidadGustos = parseInt($tarjetaSeleccionada.getAttribute('data-ipizza-cant-gustos'));
-        const cantidadPorciones = calcularCantidadPorciones(cantidadGustos);
-
-        const ubicacionEnCanvas = canvasPizza.obtenerUbicacionEnCanvas(IDSelect, cantidadGustos);
-
-        canvasPizza.dibujarPorciones(cantidadPorciones, canvasPizza[nombreGustoPatron], ubicacionEnCanvas, mostrar);
+        const ubicacionEnCanvas = canvasPizza.obtenerUbicacionEnCanvas(IDSelect, iPizzaSeleccionada.cantidadDeGustos);
+        canvasPizza.dibujarPorciones(iPizzaSeleccionada.nPorcionesPorGusto, canvasPizza[nombreGustoPatron], ubicacionEnCanvas, mostrar);
     }
     
-    function calcularCostos(event) {
+    function calcularCostos(event) { // LISTO
         let nombreGusto = '***';
         let precioFinalGusto = '***';
-        const IDSelect = parseInt(event.target.getAttribute('data-ipizza-gusto-num')) - 1;
 
-        const $tarjetaSeleccionada = document.querySelector('.active .tarjeta-de-producto');
-        const cantidadGustos = parseInt($tarjetaSeleccionada.getAttribute('data-ipizza-cant-gustos'));
-        const cantidadPorciones = calcularCantidadPorciones(cantidadGustos);
+        const IDSelect = obtenerIDdelDesplegable(event);
+        const iPizzaSeleccionada = obtenerInfoDeiPizzaSeleccionada();
 
         if (event.target.value != "Default") {
             nombreGusto = event.target.value;
             const precioGusto = listaDePrecios["precioPorcion"][nombreGusto];
             
-            precioFinalGusto = cantidadPorciones * precioGusto;
+            precioFinalGusto = iPizzaSeleccionada.nPorcionesPorGusto * precioGusto;
         }
 
-        let $elementosDetallePorciones = document.querySelectorAll('.detalle-porciones li');
+        let $detallePorciones = obtenerDetallePorciones();
 
         // Muestro los li necesarios
-        let liNuevo = crearElementoDeLista(cantidadPorciones, nombreGusto, precioFinalGusto);
-        $elementosDetallePorciones[IDSelect].replaceWith(liNuevo);
+        let liNuevo = crearElementoDeLista(iPizzaSeleccionada.nPorcionesPorGusto, nombreGusto, precioFinalGusto);
+        mostrarDetallePorciones($detallePorciones, IDSelect, liNuevo);
 
         const costoTotal = calcularCostoTotal();
         mostrarCostoTotal(costoTotal);
     }
     
-    /* Controlo elemento visible en el carousel */
+    /* INICIO Control de tarjeta visible en el carousel */
     const $carouselProductos = document.getElementById('armala-carousel-productos');
 
     if ($carouselProductos !== null) {
-        $carouselProductos.addEventListener('slid.bs.carousel', function () {
-            const $tarjetaSeleccionada = document.querySelector('.active .tarjeta-de-producto');
-            const cantidadGustos = parseInt($tarjetaSeleccionada.getAttribute('data-ipizza-cant-gustos'));
-            const cantidadPorciones = calcularCantidadPorciones(cantidadGustos);
-            
-            let $listaDetallePorciones = document.querySelector('.detalle-porciones');
-            let $elementosDetallePorciones = document.querySelectorAll('.detalle-porciones li');
-    
-            // Oculto todos los desplegables
-            for(let i=0; i < cantDesplegables; i++) {
-                $desplegables[i].classList.add('d-none');
-                $desplegables[i].selectedIndex = 0;
-                
-                let liGenerico = crearElementoDeLista(cantidadPorciones, '***', '***', false);
-                $elementosDetallePorciones[i].replaceWith(liGenerico);
-            }
-    
-            $elementosDetallePorciones = document.querySelectorAll('.detalle-porciones li');
-    
-            // Muestro los desplegables necesarios
-            for(let i=0; i < cantidadGustos; i++) {
-                $desplegables[i].classList.remove('d-none');
-    
-                $elementosDetallePorciones[i].classList.toggle('d-none');
-            }
-            
-            canvasPizza.limpiarCanvas();
-            const costoTotal = calcularCostoTotal();
-            mostrarCostoTotal(costoTotal);
-        });
+        $carouselProductos.addEventListener('slid.bs.carousel', actualizarPaginaArmala);
     }
 
-    function calcularCantidadPorciones(cantidadGustos) {
-        switch(cantidadGustos) {
+    function actualizarPaginaArmala() {
+        const iPizzaSeleccionada = obtenerInfoDeiPizzaSeleccionada();
+        
+        let $detallePorciones = obtenerDetallePorciones();
+
+        // Oculto todos los desplegables
+        for(let i=0; i < cantDesplegables; i++) {
+            $desplegables[i].classList.add('d-none');
+            $desplegables[i].selectedIndex = 0;
+            
+            // Muestro los li necesarios
+            let liGenerico = crearElementoDeLista(iPizzaSeleccionada.nPorcionesPorGusto, '***', '***', false);
+            mostrarDetallePorciones($detallePorciones, i, liGenerico);
+        }
+        
+        $detallePorciones = obtenerDetallePorciones(); // Actualizo la referencia al DOM
+
+        // Muestro los desplegables necesarios
+        for(let i=0; i < iPizzaSeleccionada.cantidadDeGustos; i++) {
+            $desplegables[i].classList.remove('d-none');
+            $detallePorciones[i].classList.toggle('d-none');
+        }
+        
+        canvasPizza.limpiarCanvas();
+
+        const costoTotal = calcularCostoTotal();
+        mostrarCostoTotal(costoTotal);
+    }
+    /* FIN Control de tarjeta visible en el carousel */
+
+    function obtenerCantidadPorciones(cantidadDeGustos) { //LISTO
+        switch(cantidadDeGustos) {
             case 1: {
                 return 8;
             }
@@ -185,8 +180,31 @@ function init() {
         }
     }
 
-    /* Crear Elemento de Lista */
-    function crearElementoDeLista(cantPorciones, gusto, precio, visible = true) {
+    function obtenerIDdelDesplegable(event) { //LISTO
+        return parseInt(event.target.getAttribute('data-ipizza-gusto-num')) - 1;
+    }
+
+    function obtenerInfoDeiPizzaSeleccionada() { //LISTO
+        const $tarjetaSeleccionada = document.querySelector('.active .tarjeta-de-producto');
+        const cantidadDeGustos = parseInt($tarjetaSeleccionada.getAttribute('data-ipizza-cant-gustos'));
+        const nPorcionesPorGusto = obtenerCantidadPorciones(cantidadDeGustos);
+
+        return {
+            "cantidadDeGustos" : cantidadDeGustos,
+            "nPorcionesPorGusto" : nPorcionesPorGusto
+        }
+    }
+
+    function obtenerDetallePorciones() { //LISTO
+        return document.querySelectorAll('.detalle-porciones li');
+    }
+
+    function mostrarDetallePorciones($detallePorciones, posicion, elementoNuevo) { //LISTO
+        $detallePorciones[posicion].replaceWith(elementoNuevo);
+    }
+    
+    /* INICIO Creacion de Elemento de Lista */
+    function crearElementoDeLista(cantPorciones, gusto, precio, visible = true) { //LISTO
         const display = visible ? "" : " d-none";
 
         const li = document.createElement("li");
@@ -200,16 +218,17 @@ function init() {
         return li;
     }
 
-    function crearDivPrecio(precio) {
+    function crearDivPrecio(precio) { //LISTO
         const divPrecio = document.createElement("div");
         divPrecio.setAttribute("class", "precio");
         divPrecio.textContent = precio;
 
         return divPrecio;
     }
+    /* FIN Creacion de Elemento de Lista */
 
-    /* Actualizar Precio Total */
-    function calcularCostoTotal() {
+    /* INICIO Costo total */
+    function calcularCostoTotal() { //LISTO
         const $precios = document.querySelectorAll('li:not(.d-none) div.precio');
         const cantPrecios = $precios.length;
         let costoTotal = 0;
@@ -221,7 +240,7 @@ function init() {
         return costoTotal;
     }
 
-    function mostrarCostoTotal(costoTotal) {
+    function mostrarCostoTotal(costoTotal) { //LISTO
         const $precioTotal = document.querySelector('div.precio-total');
 
         if (isNaN(costoTotal)) {
@@ -230,7 +249,7 @@ function init() {
             $precioTotal.textContent = costoTotal;
         }
     }
-
+    /* FIN Costo total */
 
     /* Checkbox cono de papas! */
     const $checkboxPapas = document.getElementById('papas')
