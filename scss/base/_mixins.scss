@@ -10,6 +10,12 @@
         right: 0;
 }
 
+@mixin background($url, $posicion: center, $tamano: cover) {
+    background-image: $url;
+    background-size: $tamano;
+    background-position: $posicion;
+}
+
 @mixin prefix($propiedad, $valor) {
     -webkit-#{$propiedad}: $valor;
     -moz-#{$propiedad}: $valor;

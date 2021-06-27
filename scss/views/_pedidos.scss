@@ -12,6 +12,10 @@
         @include background-full(url(../img/background/bg-pedidos.jpg), bottom);
         filter: brightness(0.7);
     }
+
+    .webp &::before {
+        @include background(url(../img/background/bg-pedidos.webp), bottom);
+    }
 }
 
 .consulta-pedido .contenedor {

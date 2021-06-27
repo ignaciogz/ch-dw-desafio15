@@ -317,15 +317,16 @@ nav#menu-mobile a:hover::before, nav#menu a:hover::before {
   background: linear-gradient(to top, #ada996, #f2f2f2, #dbdbdb, #eaeaea);
 }
 .menu-de-pizzas .maestro-pizzero {
+  content: "";
   background-image: url(../img/background/bg-maestro-pizzero.svg);
-  background-position: -39% 75%;
-  background-repeat: no-repeat;
   background-size: 50% 110%;
+  background-position: -39% 75%;
   position: absolute;
   top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  background-repeat: no-repeat;
 }
 .menu-de-pizzas #carousel-productos {
   height: 400px;
@@ -359,6 +360,11 @@ nav#menu-mobile a:hover::before, nav#menu a:hover::before {
   right: 0;
   filter: grayscale(1);
 }
+.webp .nuestra-calidad::before {
+  background-image: url(../img/background/bg-nuestra-calidad.webp);
+  background-size: cover;
+  background-position: top;
+}
 
 .nuestra-calidad figure img {
   border-radius: var(--borde-general);
@@ -374,12 +380,17 @@ nav#menu-mobile a:hover::before, nav#menu a:hover::before {
 }
 
 .opiniones {
-  background-attachment: fixed;
   background-image: url(../img/background/bg-opiniones.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   height: 440px;
+}
+.webp .opiniones::before {
+  background-image: url(../img/background/bg-nuestra-calidad.webp);
+  background-size: cover;
+  background-position: center;
 }
 
 .opiniones article {
@@ -562,6 +573,11 @@ nav#menu-mobile a:hover::before, nav#menu a:hover::before {
   right: 0;
   filter: brightness(0.7);
 }
+.webp .consulta-pedido::before {
+  background-image: url(../img/background/bg-pedidos.webp);
+  background-size: cover;
+  background-position: bottom;
+}
 
 .consulta-pedido .contenedor {
   background-color: #F8F9F180;
@@ -640,6 +656,11 @@ nav#menu-mobile a:hover::before, nav#menu a:hover::before {
   left: 0;
   right: 0;
   filter: brightness(0.4);
+}
+.webp .historia::before {
+  background-image: url(../img/background/bg-nosotros.webp);
+  background-size: cover;
+  background-position: center;
 }
 
 .historia figure {

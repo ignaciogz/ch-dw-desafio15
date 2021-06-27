@@ -32,15 +32,8 @@
     background: map-get($gradientes, UIg-Zinc);
 
     .maestro-pizzero {
-        background-image: url(../img/background/bg-maestro-pizzero.svg);
-        background-position: -39% 75%;
+        @include background-full(url(../img/background/bg-maestro-pizzero.svg), -39% 75%, 50% 110%);
         background-repeat: no-repeat;
-        background-size: 50% 110%;
-        position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
     }
 
     #carousel-productos {
@@ -71,6 +64,10 @@
         @include background-full(url(../img/background/bg-nuestra-calidad.jpg), top);
         filter: grayscale(1);
     }
+
+    .webp &::before {
+        @include background(url(../img/background/bg-nuestra-calidad.webp), top);
+    }
 }
 
 .nuestra-calidad figure {
@@ -91,12 +88,14 @@
 }
 
 .opiniones {
+    @include background(url(../img/background/bg-opiniones.jpg));
     background-attachment: fixed;
-    background-image: url(../img/background/bg-opiniones.jpg);
-    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
     height: 440px;
+
+    .webp &::before {
+        @include background(url(../img/background/bg-nuestra-calidad.webp));
+    }
 }
 
 .opiniones article {

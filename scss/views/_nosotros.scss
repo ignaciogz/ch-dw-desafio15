@@ -11,6 +11,10 @@
         @include background-full(url(../img/background/bg-nosotros.jpg));
         filter: brightness(0.4);
     }
+    
+    .webp &::before {
+        @include background(url(../img/background/bg-nosotros.webp));
+    }
 }
 
 .historia figure {
