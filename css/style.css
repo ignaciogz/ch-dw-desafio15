@@ -379,7 +379,7 @@ section.opiniones {
   background-repeat: no-repeat;
   height: 440px;
 }
-.webp section.opiniones::before {
+.webp section.opiniones {
   background: url(../img/background/bg-opiniones.webp) center/cover;
 }
 
@@ -467,10 +467,10 @@ section.nuestra-calidad article:hover {
     background: url(../img/background/bg-nuestra-calidad-tablet.webp) top/cover;
   }
 
-  .no-webp section.opiniones::before {
+  .no-webp section.opiniones {
     background: url(../img/background/bg-opiniones-tablet.jpg) center/cover;
   }
-  .webp section.opiniones::before {
+  .webp section.opiniones {
     background: url(../img/background/bg-opiniones-tablet.webp) center/cover;
   }
 }
@@ -482,10 +482,10 @@ section.nuestra-calidad article:hover {
     background: url(../img/background/bg-nuestra-calidad-mobile-xl.webp) top/cover;
   }
 
-  .no-webp section.opiniones::before {
+  .no-webp section.opiniones {
     background: url(../img/background/bg-opiniones-mobile-xl.jpg) center/cover;
   }
-  .webp section.opiniones::before {
+  .webp section.opiniones {
     background: url(../img/background/bg-opiniones-mobile-xl.webp) center/cover;
   }
 }
@@ -533,10 +533,10 @@ section.nuestra-calidad article:hover {
   section.opiniones {
     padding: var(--padding-vertical) 0;
   }
-  .no-webp section.opiniones::before {
+  .no-webp section.opiniones {
     background: url(../img/background/bg-opiniones-mobile.jpg) center/cover;
   }
-  .webp section.opiniones::before {
+  .webp section.opiniones {
     background: url(../img/background/bg-opiniones-mobile.webp) center/cover;
   }
 

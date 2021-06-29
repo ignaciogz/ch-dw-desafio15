@@ -93,7 +93,7 @@ section.opiniones {
     background-repeat: no-repeat;
     height: 440px;
 
-    .webp &::before {
+    .webp & {
         @include background(url(../img/background/bg-opiniones.webp));
     }
 }
@@ -203,11 +203,11 @@ section.opiniones article {
     }
 
     section.opiniones {
-        .no-webp &::before {
+        .no-webp & {
             @include background(url(../img/background/bg-opiniones-tablet.jpg));
         }
     
-        .webp &::before {
+        .webp & {
             @include background(url(../img/background/bg-opiniones-tablet.webp));
         }
     }
@@ -225,11 +225,11 @@ section.opiniones article {
     }
 
     section.opiniones {
-        .no-webp &::before {
+        .no-webp & {
             @include background(url(../img/background/bg-opiniones-mobile-xl.jpg));
         }
     
-        .webp &::before {
+        .webp & {
             @include background(url(../img/background/bg-opiniones-mobile-xl.webp));
         }
     }
@@ -289,11 +289,11 @@ section.opiniones article {
     section.opiniones {
         padding: var(--padding-vertical) 0;
 
-        .no-webp &::before {
+        .no-webp & {
             @include background(url(../img/background/bg-opiniones-mobile.jpg));
         }
 
-        .webp &::before {
+        .webp & {
             @include background(url(../img/background/bg-opiniones-mobile.webp));
         }
     }
