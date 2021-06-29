@@ -4,7 +4,7 @@
 @import '../base/mixins';
 
 /* -------- index.html -------- */
-section.publicidad {
+section.video-marketing {
     padding: 0;
 
     video {
@@ -155,7 +155,7 @@ section.opiniones article {
 }
 
 @include mediaq-breakpoint-between(sm, lg) {
-    section.publicidad {
+    section.video-marketing {
         height: calc(var(--altura-visible-mobile) * 0.75) !important; // Porque el height auto de .h-visible no calcula bien la altura
 
         video {
@@ -236,7 +236,7 @@ section.opiniones article {
 }
 
 @include mediaq-breakpoint {
-    section.publicidad {
+    section.video-marketing {
         /* Porque el height auto de .h-visible no calcula bien la altura */
         height: calc(var(--altura-visible-mobile) * 0.5) !important;
 

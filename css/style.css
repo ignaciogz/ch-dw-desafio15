@@ -291,15 +291,15 @@ nav#menu-mobile a:hover::before, nav#menu a:hover::before {
 }
 
 /* -------- index.html -------- */
-section.publicidad {
+section.video-marketing {
   padding: 0;
 }
-section.publicidad video {
+section.video-marketing video {
   height: var(--altura-visible);
   object-fit: fill;
   width: 100%;
 }
-section.publicidad .frase-publicitaria {
+section.video-marketing .frase-publicitaria {
   color: var(--color-gris);
   font-size: 2.8rem;
   font-weight: bold;
@@ -308,8 +308,8 @@ section.publicidad .frase-publicitaria {
   left: 68vw;
   text-shadow: 2px 2px 4px var(--color-blanco);
 }
-section.publicidad .frase-publicitaria h2,
-section.publicidad .frase-publicitaria p {
+section.video-marketing .frase-publicitaria h2,
+section.video-marketing .frase-publicitaria p {
   margin: 0;
 }
 
@@ -429,19 +429,19 @@ section.opiniones article header h4::before {
   }
 }
 @media only screen and (min-width: 576px) and (max-width: 991.98px) {
-  section.publicidad {
+  section.video-marketing {
     height: calc(var(--altura-visible-mobile) * 0.75) !important;
   }
-  section.publicidad video {
+  section.video-marketing video {
     height: calc(var(--altura-visible-mobile) * 0.75);
   }
-  section.publicidad .frase-publicitaria {
+  section.video-marketing .frase-publicitaria {
     font-size: 2rem;
     position: absolute;
     top: 21vh;
     right: 1%;
   }
-  section.publicidad .frase-publicitaria h2 {
+  section.video-marketing .frase-publicitaria h2 {
     font-size: 1.2rem;
   }
 
@@ -490,20 +490,20 @@ section.nuestra-calidad article:hover {
   }
 }
 @media only screen and (max-width: 575.98px) {
-  section.publicidad {
+  section.video-marketing {
     /* Porque el height auto de .h-visible no calcula bien la altura */
     height: calc(var(--altura-visible-mobile) * 0.5) !important;
   }
-  section.publicidad video {
+  section.video-marketing video {
     height: calc(var(--altura-visible-mobile) * 0.5);
   }
-  section.publicidad .frase-publicitaria {
+  section.video-marketing .frase-publicitaria {
     font-size: 1.5rem;
     position: absolute;
     top: 15vh;
     right: 2%;
   }
-  section.publicidad .frase-publicitaria h2 {
+  section.video-marketing .frase-publicitaria h2 {
     font-size: 0.7rem;
   }
 
