@@ -718,8 +718,9 @@ section.historia figure {
 }
 section.historia figure img {
   border: 0.5rem outset var(--color-gris);
+  height: 375px;
   transform: rotate(-5deg);
-  width: 100%;
+  width: 563px;
 }
 section.historia figure figcaption {
   width: 100%;
@@ -1018,6 +1019,8 @@ footer i {
 
 footer .nuestras-apps img {
   filter: opacity(0.6);
+  height: 61px;
+  width: 202px;
 }
 footer .nuestras-apps img:hover {
   filter: drop-shadow(0 0 10px #F8F9F166);
@@ -1285,7 +1288,8 @@ nav#menu a:hover::before, nav#menu-mobile a:hover::before {
 .tarjeta-de-producto figure img {
   border-radius: var(--borde-general) var(--borde-general) 0 0;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
-  width: 100%;
+  height: 245px;
+  width: 245px;
 }
 .tarjeta-de-producto figure figcaption {
   height: 60px;
