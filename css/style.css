@@ -348,7 +348,7 @@ section.nuestra-calidad article:hover {
 }
 section.nuestra-calidad::before {
   content: "";
-  background: url(../img/background/bg-nuestra-calidad.jpg) top/cover;
+  background: url(../img/background/bg-nuestra-calidad.webp) top/cover;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -356,8 +356,8 @@ section.nuestra-calidad::before {
   right: 0;
   filter: grayscale(1);
 }
-.webp section.nuestra-calidad::before {
-  background: url(../img/background/bg-nuestra-calidad.webp) top/cover;
+.no-webp section.nuestra-calidad::before {
+  background: url(../img/background/bg-nuestra-calidad.jpg) top/cover;
 }
 
 section.nuestra-calidad figure img {
@@ -374,13 +374,13 @@ section.nuestra-calidad figure figcaption p {
 }
 
 section.opiniones {
-  background: url(../img/background/bg-opiniones.jpg) center/cover;
+  background: url(../img/background/bg-opiniones.webp) center/cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
   height: 440px;
 }
-.webp section.opiniones {
-  background: url(../img/background/bg-opiniones.webp) center/cover;
+.no-webp section.opiniones {
+  background: url(../img/background/bg-opiniones.jpg) center/cover;
 }
 
 section.opiniones article {
@@ -596,7 +596,7 @@ section.consulta-pedido i {
 }
 section.consulta-pedido::before {
   content: "";
-  background: url(../img/background/bg-pedidos.jpg) bottom/cover;
+  background: url(../img/background/bg-pedidos.webp) bottom/cover;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -604,8 +604,8 @@ section.consulta-pedido::before {
   right: 0;
   filter: brightness(0.7);
 }
-.webp section.consulta-pedido::before {
-  background: url(../img/background/bg-pedidos.webp) bottom/cover;
+.no-webp section.consulta-pedido::before {
+  background: url(../img/background/bg-pedidos.jpg) bottom/cover;
 }
 
 section.consulta-pedido .contenedor {
@@ -700,7 +700,7 @@ section.historia article {
 }
 section.historia::before {
   content: "";
-  background: url(../img/background/bg-nosotros.jpg) center/cover;
+  background: url(../img/background/bg-nosotros.webp) center/cover;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -708,8 +708,8 @@ section.historia::before {
   right: 0;
   filter: brightness(0.4);
 }
-.webp section.historia::before {
-  background: url(../img/background/bg-nosotros.webp) center/cover;
+.no-webp section.historia::before {
+  background: url(../img/background/bg-nosotros.jpg) center/cover;
 }
 
 section.historia figure {

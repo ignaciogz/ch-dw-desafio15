@@ -8,12 +8,12 @@ section.historia {
     }
 
     &::before {
-        @include background-full(url(../img/background/bg-nosotros.jpg));
+        @include background-full(url(../img/background/bg-nosotros.webp));
         filter: brightness(0.4);
     }
     
-    .webp &::before {
-        @include background(url(../img/background/bg-nosotros.webp));
+    .no-webp &::before {
+        @include background(url(../img/background/bg-nosotros.jpg));
     }
 }
 

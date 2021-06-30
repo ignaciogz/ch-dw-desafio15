@@ -61,12 +61,12 @@ section.nuestra-calidad {
     }
 
     &::before  {
-        @include background-full(url(../img/background/bg-nuestra-calidad.jpg), top);
+        @include background-full(url(../img/background/bg-nuestra-calidad.webp), top);
         filter: grayscale(1);
     }
 
-    .webp &::before {
-        @include background(url(../img/background/bg-nuestra-calidad.webp), top);
+    .no-webp &::before {
+        @include background(url(../img/background/bg-nuestra-calidad.jpg), top);
     }
 }
 
@@ -88,13 +88,13 @@ section.nuestra-calidad figure {
 }
 
 section.opiniones {
-    @include background(url(../img/background/bg-opiniones.jpg));
+    @include background(url(../img/background/bg-opiniones.webp));
     background-attachment: fixed;
     background-repeat: no-repeat;
     height: 440px;
 
-    .webp & {
-        @include background(url(../img/background/bg-opiniones.webp));
+    .no-webp & {
+        @include background(url(../img/background/bg-opiniones.jpg));
     }
 }
 
