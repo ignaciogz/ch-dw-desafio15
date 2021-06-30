@@ -1209,7 +1209,7 @@ nav#menu-mobile a:hover::before, nav#menu a:hover::before {
   width: 100%;
 }
 
-#contenedor-menu-mobile {
+#container-menu-mobile {
   background-color: var(--color-gris);
   user-select: none;
 }
