@@ -736,7 +736,7 @@ section.galeria {
   background: linear-gradient(to bottom, #000000, #434343);
   padding: 0;
 }
-section.galeria img {
+section.galeria picture, section.galeria img {
   height: 44vh;
   width: 100%;
 }
